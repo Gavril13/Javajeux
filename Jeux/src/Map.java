@@ -4,18 +4,18 @@ private int latitude;
 private int longitude;
 private int[][] mur;  //matrice (définie) si > 20 mur et < 1 mur pour x et y
 private int[][] Hero; 
-private int[][] Monstre; 
-private int[][] COffre; 
-private int[][] Boss; 
+private int[][] monstre; 
+private int[][] coffre; 
+private int[][] boss; 
    
-   public Map(int latitude, int longitude, int[][] mur, int[][] Hero, int[][] Monstre, int[][] COffre, int[][] Boss) {
+   public Map(int latitude, int longitude, int[][] mur, int[][] Hero, int[][] monstre, int [][] coffre, int [][] boss) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.mur = mur;
         this.Hero = Hero;
-        this.Monstre = Monstre;
-        this.COffre = COffre;
-        this.Boss = Boss;
+        this.monstre = monstre;
+        this.coffre = coffre;
+        this.boss = boss;
     }
    
     public int getLatitude() {
@@ -39,22 +39,22 @@ private int[][] Boss;
             for (int j = 0; j < longitude; j++) { //faire en sorte de mettre voir les cordonée et faire  (detecter les cordonées) si la longitude et latitude sont au possition du mur
                 
                 if(this.estMur(i, j)) {
-                    System.out.print("X\t");
+                    System.out.print("X\t");//mur
                 }
                 else if(this.estHero(i, j)){
-                    System.out.print("H\t");
+                    System.out.print("H\t");//hero
                 }
-                else if(this.estMonstre(i, i)){
-                    System.out.print("M\t");
+                else if(this.estmonstre(i, j)){
+                    System.out.print("M\t");//monstre
                 }
-                else if(this.estCOffre(i, i)){
-                    System.out.print("C\t");
+               else if(this.estcoffre(i, j)){
+                    System.out.print("C\t");//coffre
                 }
-                else if (this.estBoss(i, i)) {
-                    System.out.print("B\t");
+                else if (this.estboss(i, j)) {
+                    System.out.print("B\t");//boss
                 }
                 else {
-                    System.out.print("0\t");
+                    System.out.print("0\t");//deplacement
                 }
             }          
             System.out.println();
@@ -80,9 +80,19 @@ private int[][] Boss;
         return false;
     }
 
-    private boolean estMonstre(int indexLat, int indexLong) { //Position des Monstres
-        for(int i = 0; i < Monstre.length; i++) {
-            if(indexLat == Monstre[i][0] && indexLong == Monstre[i][1]) {
+    private boolean estmonstre(int indexLat, int indexLong) { //Position des Monstres
+        for(int i = 0; i < monstre.length; i++) {
+            if(indexLat == monstre[i][0] && indexLong == monstre[i][1]) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+ 
+    private boolean estcoffre(int indexLat, int indexLong) { //position des Coffre
+        for(int i = 0; i < coffre.length; i++) {
+            if(indexLat == coffre[i][0] && indexLong == coffre[i][1]) {
                 return true;
             }
         }
@@ -90,19 +100,9 @@ private int[][] Boss;
         return false;
     }
 
-    private boolean estCOffre(int indexLat, int indexLong) { //position des Coffre
-        for(int i = 0; i < COffre.length; i++) {
-            if(indexLat == COffre[i][0] && indexLong == COffre[i][1]) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    private boolean estBoss(int indexLat, int indexLong) { //Possition des Boss
-        for(int i = 0; i < Boss.length; i++) {
-            if(indexLat == Boss[i][0] && indexLong == Boss[i][1]) {
+    private boolean estboss(int indexLat, int indexLong) { //Possition des Boss
+        for(int i = 0; i < boss.length; i++) {
+            if(indexLat == boss[i][0] && indexLong == boss[i][1]) {
                 return true;
             }
         }

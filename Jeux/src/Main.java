@@ -11,16 +11,19 @@ public class Main {
             {4,1},{2,3},{2,4},{3,3},{3,4},{6,2},{6,3},{6,4},{1,7},{2,7},{3,7},{7,7},{8,7},{8,8},{8,3}//mur dans la map (latitude, longitude)
         };
 
-        int[][] Hero ={{1,1}};
+        int[][] Hero = {{1,1}};
 
-        int[][] Monstre = {{5,1},{1,6},{5,6},{8,5}};
+        int[][] monstre = 
+        {
+            {5,1},{1,6},{5,6},{8,5}
+        };
 
-        int[][] COffre = {{3,1},{1,8},{7,8}};
+        int[][] coffre = {{3,1},{1,8},{7,8}};
 
-        int[][] Boss = {{2,8}};
+        int[][] boss = {{2,8}};
 
         //Hero hero = new Hero(1, 1, 0, 20, 20, 100, 10, null, 0, 0, 0, 0)
-        Map map = new Map(10, 10, mur, Hero, Monstre, COffre, Boss);
+        Map map = new Map(10, 10, mur, Hero, monstre, coffre, boss);
         map.showmap();
     }
 }
