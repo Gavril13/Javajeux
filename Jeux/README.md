@@ -31,9 +31,9 @@ Truck à faire:
 
 Pour la map (Donjon):
 
--création de la map avec des cordonées (avec bordure autour de la map).
+-création de la map avec des cordonées (avec bordure autour de la map). 
 
--dans la map il doit avoir un coffre, un hero, des monstres. (il auront une place définie)
+-dans la map il doit avoir un ou plusieurs coffre, un hero, des monstres. (il auront une place définie)
 
 -Déplacement sur la map Gauche, froite, haut, bas. (Pour les Heros) (peut etre des énumération)
 
