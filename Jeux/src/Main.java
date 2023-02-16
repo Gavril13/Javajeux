@@ -13,8 +13,14 @@ public class Main {
 
         int[][] Hero ={{1,1}};
 
+        int[][] Monstre = {{5,1},{1,6},{5,6},{8,5}};
+
+        int[][] COffre = {{3,1},{1,8},{7,8}};
+
+        int[][] Boss = {{2,8}};
+
         //Hero hero = new Hero(1, 1, 0, 20, 20, 100, 10, null, 0, 0, 0, 0)
-        Map map = new Map(10, 10, mur, Hero);
+        Map map = new Map(10, 10, mur, Hero, Monstre, COffre, Boss);
         map.showmap();
     }
 }
