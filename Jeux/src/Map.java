@@ -2,13 +2,14 @@ public class Map { //class perso pour les déplacement
 
 private int latitude;
 private int longitude;
+private int collision;
 private int[][] mur;  //matrice (définie) si > 20 mur et < 1 mur pour x et y
 private int[][] Hero; 
 private int[][] monstre; 
 private int[][] coffre; 
 private int[][] boss; 
    
-   public Map(int latitude, int longitude, int[][] mur, int[][] Hero, int[][] monstre, int [][] coffre, int [][] boss) {
+   public Map(int latitude, int longitude, int[][] mur, int[][] Hero, int[][] monstre, int [][] coffre, int [][] boss, int collision) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.mur = mur;
@@ -16,6 +17,7 @@ private int[][] boss;
         this.monstre = monstre;
         this.coffre = coffre;
         this.boss = boss;
+        this.collision = collision;
     }
    
     public int getLatitude() {
@@ -32,6 +34,14 @@ private int[][] boss;
     
     public void setLongitude(int longitude) {
         this.longitude = longitude;
+    }
+
+    public int getcollision(){
+        return collision;
+    }
+
+    public void setcollision(int collision){
+        this.collision = collision;
     }
     
     public void showmap(){ //il faut parcourir la carte(pas besoin de l'afficher) (savoir ou est le personnage sur la map)
@@ -109,5 +119,22 @@ private int[][] boss;
 
         return false;
     }
+
+    public void collision(){
+        if(mur[x - 1][y] == "X"){ //gauche
+            
+        }
+        if(mur[x - 1][y] == "X"){ //droite
+            
+        }
+        if(mur[x - 1][y] == "X"){ //haut 
+            
+        }
+        if(mur[x - 1][y] == "X"){ //bas
+            
+        }
+    }
+
 }
+
     

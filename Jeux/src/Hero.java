@@ -110,7 +110,7 @@ public class Hero extends Perso{ // il faut inventaire
     public void setartefacts(int artefacts){
         this.artefacts = artefacts;
     }
-
+///faire des collision 
 
     public void deplacer(){ //déplacement
         switch (deplacement) {

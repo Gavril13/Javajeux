@@ -12,6 +12,6 @@ public class Coffre {
     }
 
     //public int getarme(){
-
+// Peut etre une énumération
     //}
 }
