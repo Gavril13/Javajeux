@@ -35,7 +35,7 @@ Pour la map (Donjon):
 
 -dans la map il doit avoir un coffre, un hero, des monstres. (il auront une place définie)
 
--Déplacement sur la map Gauche, froite, haut, bas. (Pour les Heros)
+-Déplacement sur la map Gauche, froite, haut, bas. (Pour les Heros) (peut etre des énumération)
 
 Pour le Hero:
 
