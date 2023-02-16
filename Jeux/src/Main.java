@@ -19,35 +19,22 @@ public class Main {
 
         int[][] boss = {{2,8}};//emplacement boss
 
-        public void collision(){
-            if(mur[x - 1][y] == "X"){ //gauche
+        /*if(int [][] mur == "X"){ //gauche
                 
-            }
-            if(mur[x - 1][y] == "X"){ //gauche
-                
-            }
-            if(mur[x - 1][y] == "X"){ //gauche
-                
-            }
-            if(mur[x - 1][y] == "X"){ //gauche
-                
-            }
         }
-    
-        public void deplacer(){ //déplacement
-            switch (deplacement) {
-                case "haut":
-                    this.y -= 1; break;
-                case "bas":
-                    this.y += 1; break;
-                case "droite":
-                    this.x += 1; break;
-                case "gauche":
-                    this.x -= 1; break;
-            }
+        if(mur[x - 1][y] == "X"){ //gauche
+                
         }
+        if(mur[x - 1][y] == "X"){ //gauche
+                
+        }
+        if(mur[x - 1][y] == "X"){ //gauche
+            
+        }*/
 
-        Hero hero = new Hero(1, 1, 0, 20, 20, 100, 10, null, 0, 0, 0, 0)
+        
+        Hero hero = new Hero(1, 1, 0, 20, 20, 100, 10, null, 0, 0, 0, 0);
+        hero.deplacer();
         Map map = new Map(10, 10, mur, Hero, monstre, coffre, boss);
         map.showmap();
     }
