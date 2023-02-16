@@ -11,8 +11,10 @@ public class Main {
             {4,1},{2,3},{2,4},{3,3},{3,4},{6,2},{6,3},{6,4},{1,7},{2,7},{3,7},{7,7},{8,7},{8,8},{8,3}//mur dans la map (latitude, longitude)
         };
 
+        int[][] Hero ={{1,1}};
+
         //Hero hero = new Hero(1, 1, 0, 20, 20, 100, 10, null, 0, 0, 0, 0)
-        Map map = new Map(10, 10, mur);
+        Map map = new Map(10, 10, mur, Hero);
         map.showmap();
     }
 }

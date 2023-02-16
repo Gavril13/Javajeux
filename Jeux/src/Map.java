@@ -34,14 +34,16 @@ private int[][] Hero;
                 
                 if(this.estMur(i, j)) {
                     System.out.print("X\t");
-                } else {
+                }
+               if(this.estHero(i, j)){
+                    System.out.print(".\t");
+                } 
+                else {
                     System.out.print("0\t");
                 }
-                
             }          
             System.out.println();
         }
-
     }
 
     private boolean estMur(int indexLat, int indexLong) {
@@ -50,7 +52,7 @@ private int[][] Hero;
                 return true;
             }
         }
-
+///voir si il faut faire un seul boolean
         return false;
     }
 
