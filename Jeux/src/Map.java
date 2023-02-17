@@ -110,6 +110,9 @@ private int[][] boss;
         return false;
     }
 
+    
+
+
     /*public void collision(){
         if(mur[x - 1][y] == "X"){ //gauche
             

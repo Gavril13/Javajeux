@@ -1,4 +1,4 @@
-public class Main {
+public class Main { //essayer de faire juste déplacer le point H de 1 de cordonée (ou je le fais ??)
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
         //afficher la map apres qui a saisie son nom ... (debut de game)
@@ -19,6 +19,17 @@ public class Main {
 
         int[][] boss = {{2,8}};//emplacement boss
 
+        //MoveHero p1 = new MoveHero (1 , 2);
+        //System.out.println( p1 );
+        // (1 ,2)
+        //p1.moveDown ();
+        //System.out.println( p1 );
+        // (1 ,3)
+        //p1.moveRight ();
+        //System.out.println( p1 );
+        // (2 ,3)
+
+
         /*if(int [][] mur == "X"){ //gauche
                 
         }
@@ -33,9 +44,11 @@ public class Main {
         }*/
 
         
-        Hero hero = new Hero(1, 1, 0, 20, 20, 100, 10, null, 0, 0, 0, 0);
-        hero.deplacer();
+        //Hero hero = new Hero(1, 1, 0, 20, 20, 100, 10, null, 0, 0, 0, 0);
+        //hero.deplacer();
         Map map = new Map(10, 10, mur, Hero, monstre, coffre, boss);
         map.showmap();
+
+
     }
 }

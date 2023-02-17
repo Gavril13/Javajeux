@@ -1,18 +1,20 @@
 public class Hero extends Perso{ // il faut inventaire
     String name;
     String deplacement;
+    String move;
     int inventaire;
     int arme;
     int potion;
     int artefacts;
 
-    public Hero(int x, int y, int ex, int attaque, int def, int pv, int velo, String name, int inventaire, int arme, int potion, int artefacts){
+    public Hero(int x, int y, int ex, int attaque, int def, int pv, int velo, String name, int inventaire, int arme, int potion, int artefacts, String move){
         super(x, y, ex, attaque, def, pv, velo);
         this.name = name;
         this.inventaire = inventaire;
         this.arme = arme;
         this.potion = potion;
         this.artefacts = artefacts;
+        this.move = move;
     }
 
     public int getx(){ // cordo x
