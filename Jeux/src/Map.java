@@ -3,19 +3,21 @@ public class Map { //class perso pour les déplacement
 private int latitude;
 private int longitude;
 private int[][] mur;  //matrice (définie) si > 20 mur et < 1 mur pour x et y
-private int[][] Hero; 
+//private int[][] Hero; 
 private int[][] monstre; 
 private int[][] coffre; 
 private int[][] boss; 
+private int[][] arene;
    
-   public Map(int latitude, int longitude, int[][] mur, int[][] Hero, int[][] monstre, int [][] coffre, int [][] boss) {
+   public Map(int latitude, int longitude, int[][] mur, int[][] Hero, int[][] monstre, int [][] coffre, int [][] boss, int [][] arene) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.mur = mur;
-        this.Hero = Hero;
+        //this.Hero = Hero;
         this.monstre = monstre;
         this.coffre = coffre;
         this.boss = boss;
+        this.arene = arene;
     }
    
     public int getLatitude() {
@@ -41,9 +43,6 @@ private int[][] boss;
                 if(this.estMur(i, j)) {
                     System.out.print("X\t");//mur
                 }
-                else if(this.estHero(i, j)){
-                    System.out.print("H\t");//hero
-                }
                 else if(this.estmonstre(i, j)){
                     System.out.print("M\t");//monstre
                 }
@@ -53,13 +52,20 @@ private int[][] boss;
                 else if (this.estboss(i, j)) {
                     System.out.print("B\t");//boss
                 }
-                else {
+                else if(this.estarene(i, j)) {
                     System.out.print("0\t");//deplacement
+                }
+                else{
+                    return;
                 }
             }          
             System.out.println();
         }
     }
+
+    /*else if(this.estHero(i, j)){
+        System.out.print("H\t");//hero
+    }*/
 
     private boolean estMur(int indexLat, int indexLong) { //Position des murs
         for(int i = 0; i < mur.length; i++) {
@@ -70,7 +76,7 @@ private int[][] boss;
         return false;
     }
 
-    private boolean estHero(int indexLat, int indexLong) { //Position du Hero
+    /*private boolean estHero(int indexLat, int indexLong) { //Position du Hero
         for(int i = 0; i < Hero.length; i++) {
             if(indexLat == Hero[i][0] && indexLong == Hero[i][1]) {
                 return true;
@@ -78,7 +84,7 @@ private int[][] boss;
         }
 
         return false;
-    }
+    }*/
 
     private boolean estmonstre(int indexLat, int indexLong) { //Position des Monstres
         for(int i = 0; i < monstre.length; i++) {
@@ -110,14 +116,43 @@ private int[][] boss;
         return false;
     }
 
-    public static void deplacerHero(int[][] hero, int latitude, int longitude) {
+    private boolean estarene(int indexLat, int indexLong) { //zone de déplacement
+        for(int i = 0; i < arene.length; i++) {
+            if(indexLat == arene[i][0] && indexLong == arene[i][1]) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /*public static void deplacerHero(int[][] hero, int latitude, int longitude) {
         // Mettre à jour les coordonnées du héros en ajoutant les valeurs de déplacement
         hero[0][0] += latitude;
         hero[0][1] += longitude;
         System.out.println("Le héros se déplace de (" + latitude + ", " + longitude + ") et arrive en (" + hero[0][0] + ", " + hero[0][1] + ")");
+    }*/
+
+    /*public void placer(int l, int c, char H){
+        l = l-0;
+        c = c-0;  
+        if(l < 0 || c < 0 || l>longitude || c>latitude){
+            System.out.print("Erreur de position");
+            return;
+        }
+
+        if(arene[l][c] == 0 ){
+            arene[l][c] = H;
+        }
+
+        else{
+            System.out.print("Erreur, zone occupée");
+        }
     }
 
-    public static void deplacerPersonnage(char[][] carte, int[][] hero, char direction) {
+
+
+
+    /*public static void deplacerPersonnage(char[][] carte, int[][] hero, char direction) {
         int[] newPosition = position.clone(); // Créer une copie de la position actuelle pour modifier les coordonnées
     
         // Modifier les coordonnées de la nouvelle position en fonction de la direction
