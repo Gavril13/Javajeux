@@ -9,7 +9,7 @@ private int[][] coffre;
 private int[][] boss; 
 private int[][] arene;
    
-   public Map(int latitude, int longitude, int[][] mur, int[][] Hero, int[][] monstre, int [][] coffre, int [][] boss, int [][] arene) {
+   public Map(int latitude, int longitude, int[][] mur, int[][] monstre, int [][] coffre, int [][] boss, int [][] arene) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.mur = mur;
@@ -63,7 +63,7 @@ private int[][] arene;
         }
     }
 
-    /*else if(this.estHero(i, j)){
+    /*else if(this.estHero(i, j)){ // ancien emplacement du hero ( a modif)
         System.out.print("H\t");//hero
     }*/
 
@@ -76,7 +76,7 @@ private int[][] arene;
         return false;
     }
 
-    /*private boolean estHero(int indexLat, int indexLong) { //Position du Hero
+    /*private boolean estHero(int indexLat, int indexLong) { //Position du Hero (a modif)
         for(int i = 0; i < Hero.length; i++) {
             if(indexLat == Hero[i][0] && indexLong == Hero[i][1]) {
                 return true;
@@ -125,27 +125,21 @@ private int[][] arene;
         return false;
     }
 
-    /*public static void deplacerHero(int[][] hero, int latitude, int longitude) {
-        // Mettre à jour les coordonnées du héros en ajoutant les valeurs de déplacement
-        hero[0][0] += latitude;
-        hero[0][1] += longitude;
-        System.out.println("Le héros se déplace de (" + latitude + ", " + longitude + ") et arrive en (" + hero[0][0] + ", " + hero[0][1] + ")");
-    }*/
-
-    /*public void placer(int l, int c, char H){
-        l = l-0;
-        c = c-0;  
-        if(l < 0 || c < 0 || l>longitude || c>latitude){
-            System.out.print("Erreur de position");
+    public void placer(int l, int c, char H){ //possition fixe du hero (H)
+        l = l-1;
+        c = c-1;  
+        if(l < 0 || c < 0 || l > longitude || c > latitude){
+            System.out.print("Erreur de position\n");
             return;
         }
 
-        if(arene[l][c] == 0 ){
+        if(arene[l][c] == 0){
             arene[l][c] = H;
+            System.out.print("ok\n");
         }
 
         else{
-            System.out.print("Erreur, zone occupée");
+            System.out.print("Erreur, zone occupée\n");
         }
     }
 
@@ -201,24 +195,8 @@ private int[][] arene;
             }
             System.out.println();
         }
-    }
-    
-
-
-    /*public void collision(){
-        if(mur[x - 1][y] == "X"){ //gauche
-            
-        }
-        if(mur[x - 1][y] == "X"){ //droite
-            
-        }
-        if(mur[x - 1][y] == "X"){ //haut 
-            
-        }
-        if(mur[x - 1][y] == "X"){ //bas
-            
-        }
     }*/
+    
 
 }
 
