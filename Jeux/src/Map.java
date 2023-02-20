@@ -110,6 +110,63 @@ private int[][] boss;
         return false;
     }
 
+    public static void deplacerHero(int[][] hero, int latitude, int longitude) {
+        // Mettre à jour les coordonnées du héros en ajoutant les valeurs de déplacement
+        hero[0][0] += latitude;
+        hero[0][1] += longitude;
+        System.out.println("Le héros se déplace de (" + latitude + ", " + longitude + ") et arrive en (" + hero[0][0] + ", " + hero[0][1] + ")");
+    }
+
+    public static void deplacerPersonnage(char[][] carte, int[][] hero, char direction) {
+        int[] newPosition = position.clone(); // Créer une copie de la position actuelle pour modifier les coordonnées
+    
+        // Modifier les coordonnées de la nouvelle position en fonction de la direction
+        switch (direction) {
+            case 'N':
+                newPosition[0]--;
+                break;
+            case 'S':
+                newPosition[0]++;
+                break;
+            case 'O':
+                newPosition[1]--;
+                break;
+            case 'E':
+                newPosition[1]++;
+                break;
+            default:
+                System.out.println("Direction invalide !");
+                return; // Sortir de la fonction si la direction est invalide
+        }
+    
+        // Vérifier si la nouvelle position est dans les limites de la carte
+        if (newPosition[0] < 0 || newPosition[0] >= carte.length || newPosition[1] < 0 || newPosition[1] >= carte[0].length) {
+            System.out.println("Vous êtes sorti de la carte !");
+            return; // Sortir de la fonction si la nouvelle position est en dehors de la carte
+        }
+    
+        // Vérifier si la nouvelle position est un obstacle ('#')
+        if (carte[newPosition[0]][newPosition[1]] == '#') {
+            System.out.println("Vous avez rencontré un obstacle !");
+            return; // Sortir de la fonction si la nouvelle position est un obstacle
+        }
+    
+        // Déplacer le personnage sur la carte en modifiant les coordonnées
+        carte[position[0]][position[1]] = '.'; // Effacer l'ancienne position du personnage
+        carte[newPosition[0]][newPosition[1]] = 'P'; // Dessiner le personnage à la nouvelle position
+    
+        // Mettre à jour la position actuelle
+        position[0] = newPosition[0];
+        position[1] = newPosition[1];
+    
+        // Afficher la carte mise à jour
+        for (int i = 0; i < carte.length; i++) {
+            for (int j = 0; j < carte[0].length; j++) {
+                System.out.print(carte[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
     
 
 

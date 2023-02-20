@@ -114,6 +114,8 @@ public class Hero extends Perso{ // il faut inventaire
     }
 ///faire des collision 
 
+    
+
     public void deplacer(){ //déplacement
         switch (deplacement) {
             case "haut":
@@ -126,4 +128,6 @@ public class Hero extends Perso{ // il faut inventaire
                 this.x -= 1; break;
         }
     }
+
+
 }
