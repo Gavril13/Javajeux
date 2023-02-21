@@ -1,8 +1,8 @@
-//import java.util.Scanner;
+import java.util.Scanner;
 
 public class Main { //essayer de faire juste déplacer le point H de 1 de cordonée (ou je le fais ??)
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        System.out.println("Jeux Java");
         //afficher la map apres qui a saisie son nom ... (debut de game)
         int[][] mur = 
         {
@@ -26,7 +26,7 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
             {9,0},{9,1},{9,2},{9,3},{9,4},{9,5},{9,6},{9,7},{9,8},{9,9}
         };
 
-        //int[][] Hero = {{1,1}}; //emplacement hero
+        int[][] hero = {{1,1}}; //emplacement hero
 
         int[][] monstre = {{5,1},{1,6},{5,6},{8,5}}; //emplacement monstre
 
@@ -34,19 +34,18 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
 
         int[][] boss = {{2,8}};//emplacement boss
 
-        //Hero hero = new Hero(1, 1, 0, 20, 20, 100, 10, null, 0, 0, 0, 0);
-        //hero.deplacer();
-        Map map = new Map(10, 10, mur, monstre, coffre, boss, arene);
-        map.placer(1, 1, 'H'); //Placer le Hero sur la map
+        Map map = new Map(10, 10, mur, hero, monstre, coffre, boss, arene, null);
         map.showmap();
 
+        while (true){
+            System.out.println("Vous voulez aller ou?\n(haut, bas, gauche, droite)");
+            Scanner hero1 = new Scanner(System.in);
+            String deplacement = hero1.nextLine();
+            System.out.println("vous avez mis : " + deplacement); 
 
-        System.out.println("Vous voulez aller ou?\n(1 = haut, 2 = bas, 3 = gauche, 4 = droite)");
-        //Scanner hero1 = new Scanner(System.in);
-        //int nb = hero1.nextInt();
-        //if (nb > 0 && nb < 5){
+            //map.deplacer();
 
-        //}
-        //}*/
+            map.showmap();
+        }
     }
 }

@@ -4,17 +4,17 @@ public class Perso { //commentaire scanner (dans d'autre ficher)
     int def; //Defence
     int pv; //Point de vie
     int velo; // agilité, vitesse
-    int y; //cordo
-    int x; //cordo
+    int latitude; //cordo
+    int longitude; //cordo
 
-    public Perso(int ex, int attaque, int def, int pv, int velo, int y, int x){
+    public Perso(int ex, int attaque, int def, int pv, int velo, int latitude, int longitude){
         this.ex = ex;
         this.attaque = attaque;
         this.def = def;
         this.pv = pv;
         this.velo = velo;
-        this.y = y;
-        this.x = x;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public int getex(){//experience
@@ -57,20 +57,20 @@ public class Perso { //commentaire scanner (dans d'autre ficher)
         this.velo = velo;
     }
 
-    public int getx(){// x cordonnée
-        return x;
+    public int getLongitude(){// x cordonnée
+        return longitude;
     }
 
-    public void setx(int x){
-        this.x = x;
+    public void setx(int longitude){
+        this.longitude = longitude;
     }
 
-    public int gety(){// y cordonnée
-        return y;
+    public int getLatitude(){// y cordonnée
+        return latitude;
     }
 
-    public void sety(int y){
-        this.y = y;
+    public void sety(int latitude){
+        this.latitude = latitude;
     }
 
 }

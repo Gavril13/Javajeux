@@ -7,8 +7,8 @@ public class Hero extends Perso{ // il faut inventaire
     int potion;
     int artefacts;
 
-    public Hero(int x, int y, int ex, int attaque, int def, int pv, int velo, String name, int inventaire, int arme, int potion, int artefacts, String move){
-        super(x, y, ex, attaque, def, pv, velo);
+    public Hero(int longitude, int latitude, int ex, int attaque, int def, int pv, int velo, String name, int inventaire, int arme, int potion, int artefacts, String move){
+        super(longitude, latitude, ex, attaque, def, pv, velo);
         this.name = name;
         this.inventaire = inventaire;
         this.arme = arme;
@@ -17,20 +17,20 @@ public class Hero extends Perso{ // il faut inventaire
         this.move = move;
     }
 
-    public int getx(){ // cordo x
-        return x;
+    public int getLongitude(){ // cordo x
+        return longitude;
     }
 
-    public void setx(int x){
-        this.x = x;
+    public void setx(int longitude){
+        this.longitude = longitude;
     }
 
-    public int gety (){ //cordo y
-        return y;
+    public int getLatitude (){ //cordo y
+        return latitude;
     }
 
-    public void sety(int y){
-        this.y = y;
+    public void sety(int latitude){
+        this.latitude = latitude;
     }
 
     public int getex(){ //experience
@@ -116,7 +116,7 @@ public class Hero extends Perso{ // il faut inventaire
 
     
 
-    public void deplacer(){ //déplacement
+    /*public void deplacer(){ //déplacement
         switch (deplacement) {
             case "haut":
                 this.y -= 1; break;
@@ -127,7 +127,7 @@ public class Hero extends Perso{ // il faut inventaire
             case "gauche":
                 this.x -= 1; break;
         }
-    }
+    }*/
 
 
 }
