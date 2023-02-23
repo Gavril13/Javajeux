@@ -33,7 +33,9 @@ Pour la map (Donjon):
 
 -création de la map avec des cordonées (avec bordure autour de la map). 
 
--dans la map il doit avoir un ou plusieurs coffre, un hero, des monstres. (il auront une place définie) CEST FAIT
+-dans la map il doit avoir un ou plusieurs coffre, un hero, des monstres. (il auront une place définie) CEST FAIT 
+
+-coffre (énumération)
 
 -Déplacement sur la map Gauche, droite, haut, bas. (Pour les Heros) (peut etre des énumération)
 

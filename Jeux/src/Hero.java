@@ -1,14 +1,16 @@
 public class Hero{ // il faut inventaire (extends Perso)
     private String name;
-    private int longitude;
-    private int latitude;
+    private int latitude;//  latitude
+    private int longitude;// longitude
     /*private int inventaire;
     private int arme;
     private int potion;
     private int artefacts;*/
 
-    public Hero(int longitude, int latitude, String name){
+    public Hero(int latitude, int longitude, String name){
         //super(ex, attaque, def, pv, velo);
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.name = name;
         //this.inventaire = inventaire;
         //this.arme = arme;
@@ -20,7 +22,7 @@ public class Hero{ // il faut inventaire (extends Perso)
         return longitude;
     }
 
-    public void setx(int longitude){
+    public void setLongitude(int longitude){
         this.longitude = longitude;
     }
 
@@ -28,7 +30,7 @@ public class Hero{ // il faut inventaire (extends Perso)
         return latitude;
     }
 
-    public void sety(int latitude){
+    public void setLatitude(int latitude){
         this.latitude = latitude;
     }
 
@@ -48,15 +50,19 @@ public class Hero{ // il faut inventaire (extends Perso)
     }*/
 
     public void deplacer(String deplacement){ //déplacement
-        switch (deplacement) {
+        switch (deplacement){ 
             case "haut":
-                this.latitude -= 1; break;
+                setLatitude(latitude -= 1);
+                break;
             case "bas":
-                this.latitude += 1; break;
+                setLatitude(latitude += 1);
+                break;
             case "droite":
-                this.longitude += 1; break;
+                setLongitude(longitude += 1);
+                break;
             case "gauche":
-                this.longitude -= 1; break;
+                setLongitude(longitude -= 1);
+                break;
         }
     }
 

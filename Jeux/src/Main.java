@@ -26,30 +26,33 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
             {9,0},{9,1},{9,2},{9,3},{9,4},{9,5},{9,6},{9,7},{9,8},{9,9}
         };
 
-        int[][] hero = {{1,1}}; //emplacement hero
+        Hero hero2 = new Hero(1, 1, null );
 
         int[][] monstre = {{5,1},{1,6},{5,6},{8,5}}; //emplacement monstre
 
         int[][] coffre = {{3,1},{1,8},{7,8}};//emplacement coffre
 
         int[][] boss = {{2,8}};//emplacement boss
+
         
-        Hero hero2 = new Hero(1, 1, null );
-
-        Map map = new Map(10, 10, mur, hero, monstre, coffre, boss, arene);
-        map.showmap();
-
         while (true){
-            System.out.println("Vous voulez aller ou?\n(haut, bas, gauche, droite)");
-            Scanner hero1 = new Scanner(System.in);
-            String choixdeplacement = hero1.nextLine();
-            System.out.println("vous allez choisie : " + choixdeplacement); 
 
-            hero2.deplacer(choixdeplacement);
+            int[][] hero = {{hero2.getLatitude(), hero2.getLongitude()}};
+
+            Map map = new Map(10, 10, mur, hero, monstre, coffre, boss, arene);
 
             map.showmap();
 
+            System.out.println("Vous voulez aller ou?\n(haut, bas, gauche, droite)");
+            Scanner h = new Scanner(System.in);
+            String choixdeplacement = h.nextLine();
+            System.out.println("vous avez choisie : " + choixdeplacement); 
 
+            hero2.deplacer(choixdeplacement);
+
+            /*
+             * if   (hero2.getLatitude(), hero2.getLongitude() == monstre.getLatitude() , monstre.getLongitude())
+             */
 
         }
     }
