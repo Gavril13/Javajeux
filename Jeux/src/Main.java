@@ -33,19 +33,24 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
         int[][] coffre = {{3,1},{1,8},{7,8}};//emplacement coffre
 
         int[][] boss = {{2,8}};//emplacement boss
+        
+        Hero hero2 = new Hero(1, 1, null );
 
-        Map map = new Map(10, 10, mur, hero, monstre, coffre, boss, arene, null);
+        Map map = new Map(10, 10, mur, hero, monstre, coffre, boss, arene);
         map.showmap();
 
         while (true){
             System.out.println("Vous voulez aller ou?\n(haut, bas, gauche, droite)");
             Scanner hero1 = new Scanner(System.in);
-            String deplacement = hero1.nextLine();
-            System.out.println("vous avez mis : " + deplacement); 
+            String choixdeplacement = hero1.nextLine();
+            System.out.println("vous allez choisie : " + choixdeplacement); 
 
-            //map.deplacer();
+            hero2.deplacer(choixdeplacement);
 
             map.showmap();
+
+
+
         }
     }
 }

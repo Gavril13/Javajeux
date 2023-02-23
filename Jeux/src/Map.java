@@ -2,7 +2,6 @@ public class Map { //class perso pour les déplacement
 
 private int latitude;
 private int longitude;
-private String deplacement;
 private int[][] mur;  //matrice (définie) si > 20 mur et < 1 mur pour x et y
 private int[][] hero; 
 private int[][] monstre; 
@@ -10,7 +9,7 @@ private int[][] coffre;
 private int[][] boss; 
 private int[][] arene;
    
-   public Map(int latitude, int longitude, int[][] mur, int[][] hero, int[][] monstre, int [][] coffre, int [][] boss, int [][] arene, String deplacement) {
+   public Map(int latitude, int longitude, int[][] mur, int[][] hero, int[][] monstre, int [][] coffre, int [][] boss, int [][] arene) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.mur = mur;
@@ -19,7 +18,6 @@ private int[][] arene;
         this.coffre = coffre;
         this.boss = boss;
         this.arene = arene;
-        this.deplacement = deplacement;
     }
    
     public int getLatitude() {
@@ -124,19 +122,6 @@ private int[][] arene;
             }
         }
         return false;
-    }
-
-    public void deplacer(){ //déplacement
-        switch (deplacement) {
-            case "haut":
-                this.latitude -= 1; break;
-            case "bas":
-                this.latitude += 1; break;
-            case "droite":
-                this.longitude += 1; break;
-            case "gauche":
-                this.longitude -= 1; break;
-        }
     }
     
 }
