@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Hero{ // il faut inventaire (extends Perso)
     private String name;
     private int latitude;//  latitude
@@ -49,19 +52,36 @@ public class Hero{ // il faut inventaire (extends Perso)
         } 
     }*/
 
-    public void deplacer(String deplacement){ //déplacement
+    public void deplacer(String deplacement){ //déplacement + colision (penser a modif les getlongitude et latitude)
+        //List<int> k = new ArrayList<int>();
         switch (deplacement){ 
             case "haut":
-                setLatitude(latitude -= 1);
+                setLatitude(latitude -=1);
+                if (getLatitude() == 0) {
+                    setLatitude(latitude += 1); 
+                    System.out.println("Attention il y a un mur !");
+                }
                 break;
             case "bas":
                 setLatitude(latitude += 1);
+                if (getLatitude() == 9) {
+                    setLatitude(latitude -= 1); 
+                    System.out.println("Attention il y a un mur !");
+                }
                 break;
             case "droite":
                 setLongitude(longitude += 1);
+                if (getLongitude() == 0 ) {
+                    setLatitude(longitude -= 1); 
+                    System.out.println("Attention il y a un mur !");
+                }
                 break;
             case "gauche":
                 setLongitude(longitude -= 1);
+                if (getLongitude() == 0) {
+                    setLatitude(longitude += 1); 
+                    System.out.println("Attention il y a un mur !");
+                }
                 break;
         }
     }

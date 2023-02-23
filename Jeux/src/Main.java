@@ -8,7 +8,7 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
         {
             {0,0},{0,1},{0,2},{0,3},{0,4},{0,5},{0,6},{0,7},{0,8},{0,9},//haut
             {1,0},{2,0},{3,0},{4,0},{5,0},{6,0},{7,0},{8,0},{9,0},// droite
-            {9,1},{9,2},{9,3},{9,4},{9,5},{9,6},{9,7},{9,8},{9,9}, //bas
+            {9,0},{9,1},{9,2},{9,3},{9,4},{9,5},{9,6},{9,7},{9,8},{9,9}, //bas
             {1,9},{2,9},{3,9},{4,9},{5,9},{6,9},{7,9},{8,9}, //gauche
             {4,1},{2,3},{2,4},{3,3},{3,4},{6,2},{6,3},{6,4},{1,7},{2,7},{3,7},{7,7},{8,7},{8,8},{8,3}//mur dans la map (latitude, longitude)
         };
@@ -44,11 +44,18 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
             map.showmap();
 
             System.out.println("Vous voulez aller ou?\n(haut, bas, gauche, droite)");
-            Scanner h = new Scanner(System.in);
-            String choixdeplacement = h.nextLine();
+            Scanner move = new Scanner(System.in);
+            String choixdeplacement = move.nextLine();
             System.out.println("vous avez choisie : " + choixdeplacement); 
 
             hero2.deplacer(choixdeplacement);
+
+            /*if(hero2.setLatitude(0);){
+                System.out.println("tu sort de la map");
+            }
+            else{
+                System.out.println("pas marcher");
+            }*/
 
             /*
              * if   (hero2.getLatitude(), hero2.getLongitude() == monstre.getLatitude() , monstre.getLongitude())
