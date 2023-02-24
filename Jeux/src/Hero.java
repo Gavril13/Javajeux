@@ -78,7 +78,7 @@ public class Hero{ // il faut inventaire (extends Perso)
                 break;
             case "gauche":
                 setLongitude(longitude -= 1);
-                if (getLongitude() == 0) {
+                if (getLongitude() == 9) {
                     setLatitude(longitude += 1); 
                     System.out.println("Attention il y a un mur !");
                 }
