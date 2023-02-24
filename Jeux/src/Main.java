@@ -28,12 +28,15 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
 
         Hero hero2 = new Hero(1, 1, null );
 
+        Interaction interaction = new Interaction(null, 0);
+
         int[][] monstre = {{5,1},{1,6},{5,6},{8,5}}; //emplacement monstre
 
         int[][] coffre = {{3,1},{1,8},{7,8}};//emplacement coffre
 
         int[][] boss = {{2,8}};//emplacement boss
 
+        interaction.nomhero(null);
         
         while (true){
 

@@ -26,7 +26,21 @@ public class Interaction {
         this.info = info;
     }
 
-    public nomhero(){
+    public void nomhero(String information){
+        switch (information) {
+            case "Nom":
+                System.out.println("Saisie ton nom de hero ");
+                Scanner nom = new Scanner(System.in);
+                String name = nom.nextLine();
+                System.out.println("Votre nom est : " + name );
+                break;
+            case "Info":
+                System.out.println("ok c'est carré");
+                break;
+            case "Jeux":
+                System.out.println("pas ok ededde");
+                break;
+        }
         System.out.println("Saisie ton nom ");
         Scanner nom = new Scanner(name);
         System.out.println("Votre nom est :" + name);
