@@ -29,20 +29,15 @@ public class Interaction {
     public void nomhero(String information){
         switch (information) {
             case "Nom":
-                System.out.println("Saisie ton nom de hero ");
-                Scanner nom = new Scanner(System.in);
-                String name = nom.nextLine();
-                System.out.println("Votre nom est : " + name );
-                break;
+                System.out.println("====== Nom Du Hero ======");
+                System.out.println(" ");
+                return;
             case "Info":
-                System.out.println("ok c'est carré");
-                break;
+                System.out.println("ok c'e");
+                return;
             case "Jeux":
                 System.out.println("pas ok ededde");
                 break;
         }
-        System.out.println("Saisie ton nom ");
-        Scanner nom = new Scanner(name);
-        System.out.println("Votre nom est :" + name);
     }
 }

@@ -26,9 +26,13 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
             {9,0},{9,1},{9,2},{9,3},{9,4},{9,5},{9,6},{9,7},{9,8},{9,9}
         };
 
-        Hero hero2 = new Hero(1, 1, null );
+        Hero hero1 = new Hero(1, 1, null );
+
+        Monstre monstre1 = new Monstre(10, 10, 100, 5, 20, 5, 1);
 
         Interaction interaction = new Interaction(null, 0);
+
+
 
         int[][] monstre = {{5,1},{1,6},{5,6},{8,5}}; //emplacement monstre
 
@@ -36,11 +40,19 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
 
         int[][] boss = {{2,8}};//emplacement boss
 
-        interaction.nomhero(null);
-        
-        while (true){
+        while(true){
+            System.out.println("Toute les informations ! (Nom , Info, Jeux) ");
+            Scanner nom = new Scanner(System.in);
+            String info = nom.nextLine();
+            System.out.println("ok : " + info );
 
-            int[][] hero = {{hero2.getLatitude(), hero2.getLongitude()}};
+            interaction.nomhero(info);
+        }
+        
+        
+        /*while (true){
+
+            int[][] hero = {{hero1.getLatitude(), hero1.getLongitude()}};
 
             Map map = new Map(10, 10, mur, hero, monstre, coffre, boss, arene);
 
@@ -51,19 +63,12 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
             String choixdeplacement = move.nextLine();
             System.out.println("vous avez choisie : " + choixdeplacement); 
 
-            hero2.deplacer(choixdeplacement);
-
-            /*if(hero2.setLatitude(0);){
-                System.out.println("tu sort de la map");
-            }
-            else{
-                System.out.println("pas marcher");
-            }*/
+            hero1.deplacer(choixdeplacement);
 
             /*
              * if   (hero2.getLatitude(), hero2.getLongitude() == monstre.getLatitude() , monstre.getLongitude())
              */
 
-        }
+        //}
     }
 }
