@@ -17,59 +17,59 @@ public class Monstre {
         this.longitude = longitude;
     }
 
-    public int attaque (){
+    public int getattaque (){
         return attaque;
     }
 
-    public void attaque(int attaque){
+    public void setattaque(int attaque){
         this.attaque = attaque;
     }
 
-    public int def (){
+    public int getdef (){
         return def;
     }
 
-    public void def(int def){
+    public void setdef(int def){
         this.def = def;
     }
 
-    public int pv (){
+    public int getpv (){
         return pv;
     }
 
-    public void pv (int pv){
+    public void setpv (int pv){
         this.pv = pv;
     }
 
-    public int velo (){
+    public int getvelo (){
         return velo;
     }
 
-    public void velo (int velo){
+    public void setvelo (int velo){
         this.velo = velo;
     }
 
-    public int ex (){
+    public int getex (){
         return ex;
     }
 
-    public void ex (int ex){
+    public void setex (int ex){
         this.ex = ex;
     }
 
-    public int latitude (){
+    public int getlatitude (){
         return latitude;
     }
 
-    public void latitude(int latitude){
+    public void setlatitude(int latitude){
         this.latitude = latitude;
     }
 
-    public int longitude (){
+    public int getlongitude (){
         return longitude;
     }
 
-    public void longitude(int longitude){
+    public void setlongitude(int longitude){
         this.longitude = longitude;
     }
 }

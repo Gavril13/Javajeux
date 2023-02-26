@@ -30,27 +30,35 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
 
         Monstre monstre1 = new Monstre(10, 10, 100, 5, 20, 5, 1);
 
+        Monstre monstre2 = new Monstre(10, 10, 100, 5, 20, 1, 6);
+
+        Monstre monstre3 = new Monstre(10, 10, 100, 5, 20, 5, 6);
+
+        Monstre monstre4 = new Monstre(10, 10, 100, 5, 20, 8, 5);
+
         Interaction interaction = new Interaction(null, 0);
 
-
-
-        int[][] monstre = {{5,1},{1,6},{5,6},{8,5}}; //emplacement monstre
+        //int[][] monstre = {{5,1},{1,6},{5,6},{8,5}}; //emplacement monstre
 
         int[][] coffre = {{3,1},{1,8},{7,8}};//emplacement coffre
 
         int[][] boss = {{2,8}};//emplacement boss
 
-        while(true){
+
+        /*while(true){
             System.out.println("Toute les informations ! (Nom , Info, Jeux) ");
             Scanner nom = new Scanner(System.in);
             String info = nom.nextLine();
             System.out.println("ok : " + info );
 
             interaction.nomhero(info);
-        }
+        }*/
         
         
-        /*while (true){
+        while (true){
+
+            int[][] monstre = {{monstre1.getlatitude(), monstre1.getlongitude()}, {monstre2.getlatitude(), monstre2.getlongitude()}, {monstre3.getlatitude(), monstre3.getlongitude()}, {monstre4.getlatitude(), monstre4.getlongitude()}};
+
 
             int[][] hero = {{hero1.getLatitude(), hero1.getLongitude()}};
 
@@ -69,6 +77,6 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
              * if   (hero2.getLatitude(), hero2.getLongitude() == monstre.getLatitude() , monstre.getLongitude())
              */
 
-        //}
+        }
     }
 }

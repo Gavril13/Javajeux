@@ -2,12 +2,17 @@ public class Hero{ // il faut inventaire (extends Perso)
     private String name;
     private int latitude;//  latitude
     private int longitude;// longitude
+    private int attaque;
+    private int def;
+    private int pv;
+    private int velo;
+    private int ex;
     /*private int inventaire;
     private int arme;
     private int potion;
     private int artefacts;*/
 
-    public Hero(int latitude, int longitude, String name){
+    public Hero(int latitude, int longitude, String name, int attaque, int def, int pv, int velo, int ex){
         //super(ex, attaque, def, pv, velo);
         this.latitude = latitude;
         this.longitude = longitude;
