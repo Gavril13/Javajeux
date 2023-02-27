@@ -7,20 +7,43 @@ public class Hero{ // il faut inventaire (extends Perso)
     private int pv;
     private int velo;
     private int ex;
-    /*private int inventaire;
-    private int arme;
-    private int potion;
-    private int artefacts;*/
 
-    public Hero(int latitude, int longitude, String name, int attaque, int def, int pv, int velo, int ex){
+    public Hero(int latitude, int longitude, int attaque, int def, int pv, int velo, int ex){
         //super(ex, attaque, def, pv, velo);
         this.latitude = latitude;
         this.longitude = longitude;
-        this.name = name;
-        //this.inventaire = inventaire;
-        //this.arme = arme;
-        //this.potion = potion;
-        //this.artefacts = artefacts;
+        this.attaque = attaque;
+        this.def = def;
+        this.pv = pv;
+        this.velo = velo;
+        this.ex =ex;
+    }
+    
+    public int getattaque(){
+        return attaque;
+    }
+
+    public void setattaque(int attaque){
+        this.attaque = attaque;
+    }
+
+    public int getdef(){
+        return def;
+    }
+
+    public void setdef(int def){
+        this.def = def;
+    }
+
+    public int getpv(){
+        return pv;
+    }
+
+    public void setpv(int pv){
+        this.pv = pv;
+        if(this.pv <= 0){
+            this.pv = 0;
+        }
     }
 
     public int getLongitude(){ // cordo x
@@ -46,16 +69,8 @@ public class Hero{ // il faut inventaire (extends Perso)
     public void setname(String name){
         this.name = name;
     }
-///faire des collision 
 
-    /*public void collision(char X){
-        if("haut" == X){
-
-        } 
-    }*/
-
-    public void deplacer(String deplacement){ //déplacement + colision (penser a modif les getlongitude et latitude)
-        //List<int> k = new ArrayList<int>();
+    public void deplacer(String deplacement){ //déplacement + colision 
         switch (deplacement){ 
             case "haut":
                 setLatitude(latitude -=1);

@@ -26,18 +26,34 @@ public class Interaction {
         this.info = info;
     }
 
-    public void nomhero(String information){
-        switch (information) {
-            case "Nom":
-                System.out.println("====== Nom Du Hero ======");
-                System.out.println(" ");
-                return;
-            case "Info":
-                System.out.println("ok c'e");
-                return;
-            case "Jeux":
-                System.out.println("pas ok ededde");
-                break;
-        }
-    }
+    public void start(Scanner in, String startgame , Hero hero1){ 
+                System.out.println("\n=================================================================\n"+ 
+                "| Es-tu prête à ce jeux ?                                       |\n"+ 
+                "| 1 : Oui                                                       |\n"+ 
+                "| 2 : Non                                                       |\n"+ 
+                "=================================================================\n");
+                switch (startgame){
+                    case "Oui":
+                        Scanner Choix1 = new Scanner (System.in); 
+                        System.out.println("-----------------------------------------------------------------\n"+
+                            "La Partie va commencer !\n"+
+                            "Ton héro s'appelera comment ? \n"+
+                            "-----------------------------------------------------------------\n");
+                        String name = Choix1.next();
+                        Choix1.close();
+                        hero1.setname(name);
+                        System.out.println(" \n"+
+                            "Ton Nom est "+ hero1.getname() + " ! La Partie va pouvoir commencer ! \n"); 
+                    break;
+
+                    case "Non" :
+                        System.out.println("-----------------------------------------------------------------\n"+
+                        "Oublie pas de jouer ?\n"+
+                        "-----------------------------------------------------------------\n");               
+                    break;
+
+                    default:   
+                        System.out.println("\nMauvaise entrée.\nRéessaies, tu peux y arriver ;)");
+                }
+            } 
 }
