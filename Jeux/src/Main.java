@@ -26,7 +26,8 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
             {9,0},{9,1},{9,2},{9,3},{9,4},{9,5},{9,6},{9,7},{9,8},{9,9}
         };
 
-        //interaction.start(null, null, null);
+        //Interaction interaction = new Interaction();
+        //interaction.start(null, null);
 
         Hero hero1 = new Hero(1, 1, 15,15, 100, 5, 20);
 
@@ -44,22 +45,17 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
 
         Coffre coffre3 = new Coffre(0, 0, 0, 0, 8, 7);
 
-        Boss boss = new Boss(40, 50, 400, 20, 200, 2, 8);
-
-        //int[][] coffre = {{3,1},{1,8},{7,8}};//emplacement coffre
-
-        //int[][] boss = {{2,8}};//emplacement boss
-        
-        
+        Boss boss1 = new Boss(40, 50, 400, 20, 200, 2, 8);
+            
         while (true){
 
             int[][] monstre = {{monstre1.getlatitude(), monstre1.getlongitude()}, {monstre2.getlatitude(), monstre2.getlongitude()}, {monstre3.getlatitude(), monstre3.getlongitude()}, {monstre4.getlatitude(), monstre4.getlongitude()}};
 
             int [][] coffre = {{coffre1.getlatitude(), coffre1.getlongitude()}, {coffre2.getlatitude(), coffre2.getlongitude()}, {coffre3.getlatitude(), coffre3.getlongitude()}};
 
-            int [][] boss = {{boss.getlatitude(), boss.getlongitude()}};
-
             int[][] hero = {{hero1.getLatitude(), hero1.getLongitude()}};
+
+            int[][] boss = {{boss1.getlatitude(), boss1.getlongitude()}};
 
             Map map = new Map(10, 10, mur, hero, monstre, coffre, boss, arene);
 
@@ -72,7 +68,8 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
 
             hero1.deplacer(choixdeplacement);
 
-            //Combat combat
+            Combat combat = new Combat();
+            combat.combat(hero1, monstre1, monstre2, monstre3, monstre4, boss1);
 
         }
     }

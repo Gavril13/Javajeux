@@ -9,7 +9,6 @@ public class Hero{ // il faut inventaire (extends Perso)
     private int ex;
 
     public Hero(int latitude, int longitude, int attaque, int def, int pv, int velo, int ex){
-        //super(ex, attaque, def, pv, velo);
         this.latitude = latitude;
         this.longitude = longitude;
         this.attaque = attaque;
@@ -44,6 +43,17 @@ public class Hero{ // il faut inventaire (extends Perso)
         if(this.pv <= 0){
             this.pv = 0;
         }
+        if(this.pv >= 100){
+            this.pv = 100;
+        }
+    }
+
+    public int getvelo(){
+        return velo;
+    }
+
+    public void setvelo(int velo){
+        this.velo = velo;
     }
 
     public int getLongitude(){ // cordo x
