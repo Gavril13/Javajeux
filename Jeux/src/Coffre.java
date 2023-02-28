@@ -5,6 +5,7 @@ public class Coffre {
     private int inventaire;
     private int longitude;
     private int latitude;
+    private boolean coffres;
 
 
     public Coffre(int arme, int potion, int artefacts, int inventaire, int longitude, int latitude){
@@ -63,4 +64,15 @@ public class Coffre {
     public void setlatitude(int latitude){
         this.latitude = latitude;
     }
+
+
+    public boolean is_open() {
+		return coffres;
+	}
+	public void open() {
+		this.coffres = true;
+	}
+	public void close() {
+		this.coffres = false;
+	}
 }
