@@ -38,10 +38,15 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
 
         Monstre monstre4 = new Monstre(10, 10, 100, 5, 20, 8, 5);
 
-        
+        Coffre coffre1 = new Coffre(0, 0, 0, 0, 1, 3);
+
+        Coffre coffre2 = new Coffre(0, 0, 0, 0, 8, 1);
+
+        Coffre coffre3 = new Coffre(0, 0, 0, 0, 8, 7);
 
 
-        int[][] coffre = {{3,1},{1,8},{7,8}};//emplacement coffre
+
+        //int[][] coffre = {{3,1},{1,8},{7,8}};//emplacement coffre
 
         int[][] boss = {{2,8}};//emplacement boss
         
@@ -50,6 +55,7 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
 
             int[][] monstre = {{monstre1.getlatitude(), monstre1.getlongitude()}, {monstre2.getlatitude(), monstre2.getlongitude()}, {monstre3.getlatitude(), monstre3.getlongitude()}, {monstre4.getlatitude(), monstre4.getlongitude()}};
 
+            int [][] coffre = {{coffre1.getlatitude(), coffre1.getlongitude()}, {coffre2.getlatitude(), coffre2.getlongitude()}, {coffre3.getlatitude(), coffre3.getlongitude()}};
 
             int[][] hero = {{hero1.getLatitude(), hero1.getLongitude()}};
 

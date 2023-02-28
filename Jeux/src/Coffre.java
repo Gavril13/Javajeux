@@ -16,51 +16,51 @@ public class Coffre {
         this.longitude = longitude;
     }
 
-    public int arme(){
+    public int getarme(){
         return arme;
     }
 
-    public void arme(int arme){
+    public void setarme(int arme){
         this.arme = arme;
     }
 
-    public int potion(){
+    public int getpotion(){
         return arme;
     }
 
-    public void potion(int potion){
+    public void setpotion(int potion){
         this.potion = potion;
     }
 
-    public int artefacts(){
+    public int getartefacts(){
         return artefacts;
     }
 
-    public void artefacts(int artefacts){
+    public void setartefacts(int artefacts){
         this.artefacts = artefacts;
     }
 
-    public int inventaire(){
+    public int getinventaire(){
         return inventaire;
     }
 
-    public void inventaire(int inventaire){
+    public void setinventaire(int inventaire){
         this.inventaire = inventaire;
     }
 
-    public int longitude(){
+    public int getlongitude(){
         return longitude;
     }
 
-    public void longitude(int longitude){
+    public void setlongitude(int longitude){
         this.longitude = longitude;
     }
 
-    public int latitude(){
+    public int getlatitude(){
         return latitude;
     }
 
-    public void latitude(int latitude){
+    public void setlatitude(int latitude){
         this.latitude = latitude;
     }
 }
