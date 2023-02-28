@@ -27,4 +27,13 @@ public class Interaction {
                 break;
         }
     } 
+
+    public void fin(Scanner in, Hero hero1, Monstre monstre1, Monstre monstre2, Monstre monstre3, Monstre monstre4, Boss boss1 ){
+        if(monstre1.getpv() <= 0 && monstre2.getpv() <= 0 && monstre3.getpv() <= 0 &&  monstre4.getpv() <= 0 && boss1.getpv() <= 0){
+            System.out.print("Vous avez Fini le Jeux !!");
+        }
+        else if(hero1.getpv() <= 0){
+            System.out.print("Vous avez Perdu Le Jeux!!");
+        }
+    }
 }

@@ -45,7 +45,7 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
 
         Coffre coffre3 = new Coffre(0, 1, 1, 8, 7);
 
-        Boss boss1 = new Boss(40, 50, 400, 20, 200, 2, 8);
+        Boss boss1 = new Boss(50, 50, 800, 80, 200, 2, 8);
             
         while (true){
 
@@ -71,6 +71,8 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
             combat.combat(hero1, monstre1, monstre2, monstre3, monstre4, boss1, in);
 
             hero1.Coffresview(in,coffre1, coffre2, coffre3);
+
+            interaction.fin(in, hero1, monstre1, monstre2, monstre3, monstre4, boss1);
 
         }
     }

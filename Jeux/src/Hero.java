@@ -288,7 +288,7 @@ public class Hero {
                     setinventaire(inventaire - 1);
                     setarc("Arc");
                     setnbarc(nbarc - 1);
-                    System.out.println("Tu viens de prendre un Arc dans ton inventaire\n" + "Il te reste " + getinventaire() + " places dans ton inventaire");
+                    System.out.println("Tu viens de prendre un Arc dans ton inventaire\n" + "Il te reste " + getinventaire() + " place dans ton inventaire");
                 }
                 else if(objet.equals("Arc") && nbarc == 0){
                     System.out.println("Tu as déja récuperé ton Arc");
@@ -327,22 +327,25 @@ public class Hero {
             "|       - Potion de Vélocité x"+getnbpotion1()+"                                   |\n"+ 
             "|                                                               |\n"+ 
             "=================================================================\n");
-                System.out.println("Tu veux prendre un objet ? ( Saisir Arc ou Pierre de Soin ou Aucune)" +"\n");
+                System.out.println("Tu veux prendre un objet ? ( Saisir Lance ou Potion de Vélocité ou Aucune)" +"\n");
                 String objet = in.nextLine();
                 if(objet.equals("Lance") && nblance == 1){
                     setinventaire(inventaire - 1);
                     setlance("Lance");
                     setnblance(nblance - 1);
-                    System.out.println("Tu viens de prendre une Lance dans ton inventaire\n" + "il te reste " + getinventaire() + " place dans ton inventaire");
+                    System.out.println("Tu viens de prendre une Lance dans ton inventaire\n" + "Il te reste " + getinventaire() + " place dans ton inventaire");
                 }
                 else if(objet.equals("Lance") && nblance == 0){
                     System.out.println("Tu as déja récuperé ta Pierre de Soin");
                 }
-                else if(objet.equals("Potion de Vélocité") && nbpotion1 ==1){
+                else if(objet.equals("Potion de Vélocité") && nbpotion1 == 1){
                     setinventaire(inventaire - 1);
                     setpotion1("Potion de Vélocité");
                     setnbpotion1(nbpotion1 - 1);
-                    System.out.println("Tu viens de prendre une Potion de Vélocité dans ton inventaire\n" + "il te reste " + getinventaire() + " place dans ton inventaire");          
+                    System.out.println("Tu viens de prendre une Potion de Vélocité dans ton inventaire\n" + "Il te reste " + getinventaire() + " place dans ton inventaire");          
+                }
+                else if(objet.equals("Potion de Vélocité") && nbpotion1 == 0){
+                    System.out.println("Tu as déja récuperé ta Potion de Vélocité");
                 }
                 else if(objet.equals("Aucune")){
                     break;
@@ -368,19 +371,25 @@ public class Hero {
             "|       - Potion de dégats x"+getnbpotion2()+"                                   |\n"+ 
             "|                                                               |\n"+ 
             "=================================================================\n");
-                System.out.println("Tu veux prendre un objet ? ( Saisir Arc ou Pierre de Soin ou Aucune)" +"\n");
+                System.out.println("Tu veux prendre un objet ? ( Saisir Pierre de Vélocité ou Pierre de dégats ou Aucune)" +"\n");
                 String objet = in.nextLine();
                 if(objet.equals("Pierre de Vélocité") && nbpierre2 == 1){
                     setinventaire(inventaire - 1);
                     setpierre2("Pierre de Vélocité");
                     setnbpierre2(nbpierre2 - 1);
-                    System.out.println("Tu viens de prendre une Pierre de Vélocité dans ton inventaire\n" + "il te reste " + getinventaire() + " place dans ton inventaire");
+                    System.out.println("Tu viens de prendre une Pierre de Vélocité dans ton inventaire\n" + "Il te reste " + getinventaire() + " place dans ton inventaire");
+                }
+                else if(objet.equals("Pierre de Vélocité") && nbpierre2 == 0){
+                    System.out.println("Tu as déja récuperé ta Pierre de Vélocité");
                 }
                 else if(objet.equals("Potion de dégats") && nbpotion2 == 1){
                     setinventaire(inventaire - 1);
                     setpotion2("Potion de dégats");
                     setnbpotion2(nbpotion2 - 1);
-                    System.out.println("Tu viens de prendre une Potion de dégats dans ton inventaire\n" + "il te reste " + getinventaire() + " place dans ton inventaire");
+                    System.out.println("Tu viens de prendre une Potion de dégats dans ton inventaire\n" + "Il te reste " + getinventaire() + " place dans ton inventaire");
+                }
+                else if(objet.equals("Potion de dégats") && nbpotion2 == 0){
+                    System.out.println("Tu as déja récuperé ta Potion de dégats");
                 }
                 else if(objet.equals("Aucune")){
                     break;

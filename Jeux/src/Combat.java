@@ -4,6 +4,24 @@ public class Combat {
     
     public void combat (Hero hero1, Monstre monstre1, Monstre monstre2, Monstre monstre3, Monstre monstre4 , Boss boss1, Scanner in){
         while(hero1.getLatitude() == monstre1.getlatitude() && hero1.getLongitude() == monstre1.getlongitude()){
+            if(hero1.getnbarc() == 0 ){
+                hero1.setvelo(hero1.getvelo() + 5);
+            }
+            else if(hero1.getnblance() == 0 ){
+                hero1.setattaque(hero1.getattaque() + 10);
+            }
+            else if(hero1.getnbpierre2() == 0){
+                hero1.setvelo(hero1.getvelo() + 50);
+            }
+            if(hero1.getnbpotion2() == 0 ){
+                hero1.setattaque(hero1.getattaque() + 40);
+            }
+            if(hero1.getnbpotion1() == 0 ){
+                hero1.setvelo(hero1.getvelo() + 20);
+            }
+            if(hero1.getnbpierre1() == 0){
+                hero1.setpv(hero1.getpv() + 45);
+            }
             System.out.println("\n-----------------------\n" +"TU ES EN COMBAT\n");
             System.out.println("Tes Capacité :\n" + "   -Point de vie ->" + hero1.getpv()
             +"\n" + "   -Puissance D'attaque -> " + hero1.getattaque() 
@@ -27,7 +45,9 @@ public class Combat {
                     System.out.println("Le Monstre à perdu " + hero1.getattaque() + " point de vie\n" + "Il lui reste " + monstre1.getpv());
                     if(monstre1.getpv() <= 0){
                         System.out.println("Tu viens de gagner le combat");
-                        hero1.setattaque(hero1.getattaque() + 10);
+                        hero1.setattaque(hero1.getattaque() + 5);
+                        hero1.setdef(hero1.getdef() + 5);
+                        hero1.setex(hero1.getex() + 20);
                         break;
                     }
                     else{
@@ -40,7 +60,9 @@ public class Combat {
                     System.out.println("Le Monstre viens de te mettre \n" + monstre1.getattaque() + " point de dégat\n" + "Il te reste " + hero1.getpv() + " Point de vie");
                     if(monstre1.getpv() <= 0){
                         System.out.println("Tu viens de gagner le combat");
-                        hero1.setattaque(hero1.getattaque() + 10);
+                        hero1.setattaque(hero1.getattaque() + 5);
+                        hero1.setdef(hero1.getdef() + 5);
+                        hero1.setex(hero1.getex() + 20);
                         break;
                     }
                     else{
@@ -79,6 +101,24 @@ public class Combat {
             }
         }
         while(hero1.getLatitude() == monstre2.getlatitude() && hero1.getLongitude() == monstre2.getlongitude()){
+            if(hero1.getnbarc() == 0 ){
+                hero1.setvelo(hero1.getvelo() + 5);
+            }
+            else if(hero1.getnblance() == 0 ){
+                hero1.setattaque(hero1.getattaque() + 10);
+            }
+            else if(hero1.getnbpierre2() == 0){
+                hero1.setvelo(hero1.getvelo() + 50);
+            }
+            if(hero1.getnbpotion2() == 0 ){
+                hero1.setattaque(hero1.getattaque() + 40);
+            }
+            if(hero1.getnbpotion1() == 0 ){
+                hero1.setvelo(hero1.getvelo() + 20);
+            }
+            if(hero1.getnbpierre1() == 0){
+                hero1.setpv(hero1.getpv() + 45);
+            }
             System.out.println("\n-----------------------\n" +"TU ES EN COMBAT\n");
             System.out.println("Tes Capacité :\n" + "   -Point de vie ->" + hero1.getpv()
             +"\n" + "   -Puissance D'attaque -> " + hero1.getattaque() 
@@ -101,7 +141,9 @@ public class Combat {
                     System.out.println("Le Monstre à perdu " + hero1.getattaque() + " point de vie\n" + "Il lui reste " + monstre2.getpv());
                     if(monstre2.getpv() <= 0){
                         System.out.println("Tu viens de gagner le combat");
-                        hero1.setattaque(hero1.getattaque() + 10);
+                        hero1.setattaque(hero1.getattaque() + 5);
+                        hero1.setdef(hero1.getdef() + 5);
+                        hero1.setex(hero1.getex() + 20);
                         break;
                     }
                     else{
@@ -114,7 +156,9 @@ public class Combat {
                     System.out.println("Le Monstre viens de te mettre \n" + monstre2.getattaque() + " point de dégat\n" + "Il te reste " + hero1.getpv() + " Point de vie");
                     if(monstre2.getpv() <= 0){
                         System.out.println("Tu viens de gagner le combat");
-                        hero1.setattaque(hero1.getattaque() + 10);
+                        hero1.setattaque(hero1.getattaque() + 5);
+                        hero1.setdef(hero1.getdef() + 5);
+                        hero1.setex(hero1.getex() + 20);
                         break;
                     }
                     else{
@@ -153,6 +197,24 @@ public class Combat {
             }
         }
         while(hero1.getLatitude() == monstre3.getlatitude() && hero1.getLongitude() == monstre3.getlongitude()){
+            if(hero1.getnbarc() == 0 ){
+                hero1.setvelo(hero1.getvelo() + 5);
+            }
+            else if(hero1.getnblance() == 0 ){
+                hero1.setattaque(hero1.getattaque() + 10);
+            }
+            else if(hero1.getnbpierre2() == 0){
+                hero1.setvelo(hero1.getvelo() + 50);
+            }
+            if(hero1.getnbpotion2() == 0 ){
+                hero1.setattaque(hero1.getattaque() + 40);
+            }
+            if(hero1.getnbpotion1() == 0 ){
+                hero1.setvelo(hero1.getvelo() + 20);
+            }
+            if(hero1.getnbpierre1() == 0){
+                hero1.setpv(hero1.getpv() + 45);
+            }
             System.out.println("\n-----------------------\n" +"TU ES EN COMBAT\n");
             System.out.println("Tes Capacité :\n" + "   -Point de vie ->" + hero1.getpv()
             +"\n" + "   -Puissance D'attaque -> " + hero1.getattaque() 
@@ -175,7 +237,9 @@ public class Combat {
                     System.out.println("Le Monstre à perdu " + hero1.getattaque() + " point de vie\n" + "Il lui reste " + monstre3.getpv());
                     if(monstre3.getpv() <= 0){
                         System.out.println("Tu viens de gagner le combat");
-                        hero1.setattaque(hero1.getattaque() + 10);
+                        hero1.setattaque(hero1.getattaque() + 5);
+                        hero1.setdef(hero1.getdef() + 5);
+                        hero1.setex(hero1.getex() + 20);
                         break;
                     }
                     else{
@@ -188,7 +252,9 @@ public class Combat {
                     System.out.println("Le Monstre viens de te mettre \n" + monstre3.getattaque() + " point de dégat\n" + "Il te reste " + hero1.getpv() + " Point de vie");
                     if(monstre3.getpv() <= 0){
                         System.out.println("Tu viens de gagner le combat");
-                        hero1.setattaque(hero1.getattaque() + 10);
+                        hero1.setattaque(hero1.getattaque() + 5);
+                        hero1.setdef(hero1.getdef() + 5);
+                        hero1.setex(hero1.getex() + 20);
                         break;
                     }
                     else{
@@ -227,6 +293,24 @@ public class Combat {
             }
         }
         while(hero1.getLatitude() == monstre4.getlatitude() && hero1.getLongitude() == monstre4.getlongitude()){
+            if(hero1.getnbarc() == 0 ){
+                hero1.setvelo(hero1.getvelo() + 5);
+            }
+            else if(hero1.getnblance() == 0 ){
+                hero1.setattaque(hero1.getattaque() + 10);
+            }
+            else if(hero1.getnbpierre2() == 0){
+                hero1.setvelo(hero1.getvelo() + 50);
+            }
+            if(hero1.getnbpotion2() == 0 ){
+                hero1.setattaque(hero1.getattaque() + 40);
+            }
+            if(hero1.getnbpotion1() == 0 ){
+                hero1.setvelo(hero1.getvelo() + 20);
+            }
+            if(hero1.getnbpierre1() == 0){
+                hero1.setpv(hero1.getpv() + 45);
+            }
             System.out.println("\n-----------------------\n" +"TU ES EN COMBAT\n");
             System.out.println("Tes Capacité :\n" + "   -Point de vie ->" + hero1.getpv()
             +"\n" + "   -Puissance D'attaque -> " + hero1.getattaque() 
@@ -249,7 +333,9 @@ public class Combat {
                     System.out.println("Le Monstre à perdu " + hero1.getattaque() + " point de vie\n" + "Il lui reste " + monstre4.getpv());
                     if(monstre4.getpv() <= 0){
                         System.out.println("Tu viens de gagner le combat");
-                        hero1.setattaque(hero1.getattaque() + 10);
+                        hero1.setattaque(hero1.getattaque() + 5);
+                        hero1.setdef(hero1.getdef() + 5);
+                        hero1.setex(hero1.getex() + 20);
                         break;
                     }
                     else{
@@ -262,7 +348,9 @@ public class Combat {
                     System.out.println("Le Monstre viens de te mettre \n" + monstre4.getattaque() + " point de dégat\n" + "Il te reste " + hero1.getpv() + " Point de vie");
                     if(monstre4.getpv() <= 0){
                         System.out.println("Tu viens de gagner le combat");
-                        hero1.setattaque(hero1.getattaque() + 10);
+                        hero1.setattaque(hero1.getattaque() + 5);
+                        hero1.setdef(hero1.getdef() + 5);
+                        hero1.setex(hero1.getex() + 20);
                         break;
                     }
                     else{
@@ -301,6 +389,24 @@ public class Combat {
             }
         }
         while(hero1.getLatitude() == boss1.getlatitude() && hero1.getLongitude() == boss1.getlongitude()){
+            if(hero1.getnbarc() == 0 ){
+                hero1.setvelo(hero1.getvelo() + 5);
+            }
+            else if(hero1.getnblance() == 0 ){
+                hero1.setattaque(hero1.getattaque() + 10);
+            }
+            else if(hero1.getnbpierre2() == 0){
+                hero1.setvelo(hero1.getvelo() + 50);
+            }
+            if(hero1.getnbpotion2() == 0 ){
+                hero1.setattaque(hero1.getattaque() + 40);
+            }
+            if(hero1.getnbpotion1() == 0 ){
+                hero1.setvelo(hero1.getvelo() + 20);
+            }
+            if(hero1.getnbpierre1() == 0){
+                hero1.setpv(hero1.getpv() + 45);
+            }
             System.out.println("\n-----------------------\n" +"TU ES EN COMBAT\n");
             System.out.println("Tes Capacité :\n" + "   -Point de vie ->" + hero1.getpv()
             +"\n" + "   -Puissance D'attaque -> " + hero1.getattaque() 
@@ -323,7 +429,9 @@ public class Combat {
                     System.out.println("Le Monstre à perdu " + hero1.getattaque() + " point de vie\n" + "Il lui reste " + boss1.getpv());
                     if(boss1.getpv() <= 0){
                         System.out.println("Tu viens de gagner le combat");
-                        hero1.setattaque(hero1.getattaque() + 10);
+                        hero1.setattaque(hero1.getattaque() + 20);
+                        hero1.setdef(hero1.getdef() + 40);
+                        hero1.setex(hero1.getex() + 200);
                         break;
                     }
                     else{
@@ -336,7 +444,9 @@ public class Combat {
                     System.out.println("Le Monstre viens de te mettre \n" + boss1.getattaque() + " point de dégat\n" + "Il te reste " + hero1.getpv() + " Point de vie");
                     if(boss1.getpv() <= 0){
                         System.out.println("Tu viens de gagner le combat");
-                        hero1.setattaque(hero1.getattaque() + 10);
+                        hero1.setattaque(hero1.getattaque() + 20);
+                        hero1.setdef(hero1.getdef() + 40);
+                        hero1.setex(hero1.getex() + 200);
                         break;
                     }
                     else{
