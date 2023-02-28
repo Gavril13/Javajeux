@@ -56,13 +56,5 @@ public class Coffre {
         this.latitude = latitude;
     }
 
-    public void Coffres (Scanner in, Hero hero1, Coffre coffre1, Coffre coffre2, Coffre coffre3){
-        while(hero1.getLatitude() == coffre1.getlatitude() && hero1.getLongitude() == coffre1.getlongitude()){
-            System.out.println("\n=================================================================\n"+ 
-            "|                      Inventaire du Coffre                     |\n"+ 
-            "| Armes :                                                       |\n"+ 
-            "| 2 : Non                                                       |\n"+ 
-            "=================================================================\n");
-        }
-    }
+    
 }

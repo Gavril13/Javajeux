@@ -40,11 +40,11 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
 
         Monstre monstre4 = new Monstre(10, 10, 100, 5, 20, 8, 5);
 
-        Coffre coffre1 = new Coffre(0, 0, 0, 1, 3);
+        Coffre coffre1 = new Coffre(1, 1, 5, 1, 3);
 
-        Coffre coffre2 = new Coffre(0, 0, 0, 8, 1);
+        Coffre coffre2 = new Coffre(1, 0, 5, 8, 1);
 
-        Coffre coffre3 = new Coffre(0, 0, 0, 8, 7);
+        Coffre coffre3 = new Coffre(0, 1, 5, 8, 7);
 
         Boss boss1 = new Boss(40, 50, 400, 20, 200, 2, 8);
             
@@ -70,6 +70,8 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
 
             Combat combat = new Combat();
             combat.combat(hero1, monstre1, monstre2, monstre3, monstre4, boss1, in);
+
+            hero1.Coffresview(in,coffre1, coffre2, coffre3);
 
         }
     }

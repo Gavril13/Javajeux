@@ -1,4 +1,6 @@
-public class Hero{ // il faut inventaire (extends Perso)
+import java.util.*;
+
+public class Hero { // il faut inventaire (extends Perso)
     private String name;
     private int latitude;//  latitude
     private int longitude;// longitude
@@ -110,6 +112,19 @@ public class Hero{ // il faut inventaire (extends Perso)
                     System.out.println("Attention il y a un mur !");
                 }
                 break;
+        }
+    }
+
+    public void Coffresview (Scanner in, Coffre coffre1, Coffre coffre2, Coffre coffre3){
+        while(this.getLatitude() == coffre1.getlatitude() && this.getLongitude() == coffre1.getlongitude()){
+            System.out.println("Tu veux voir le Coffre ? ( Saisir Oui ou Non )\n");
+            System.out.println("\n=================================================================\n"+ 
+            "|                      Inventaire du Coffre                     |\n"+ 
+            "| Armes :                                                       |\n"+ 
+            "|       - Épée x1                                               |\n"+ 
+            "| Artefacts :                                                   |\n"+
+            "|       - Pierre de Soin x1                                     |\n"+
+            "=================================================================\n");
         }
     }
 
