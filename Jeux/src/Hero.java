@@ -214,7 +214,7 @@ public class Hero {
         this.potion2 = potion2;
     }
 
-    public void deplacer(String deplacement){ //déplacement + colision 
+    public void deplacer(String deplacement){ //fonction déplacement + inventaire + colision 
         switch (deplacement){ 
             case "haut":
                 setLatitude(latitude -=1);
@@ -264,7 +264,7 @@ public class Hero {
         }
     }
 
-    public void Coffresview (Scanner in, Coffre coffre1, Coffre coffre2, Coffre coffre3){
+    public void Coffresview (Scanner in, Coffre coffre1, Coffre coffre2, Coffre coffre3){                      //fonction Ouverture d'un coffre
         while(this.getLatitude() == coffre1.getlatitude() && this.getLongitude() == coffre1.getlongitude()){
             System.out.println("Tu veux voir le Coffre ? ( Saisir Oui ou Non )\n");
             String Coffreopen = in.nextLine();
@@ -281,7 +281,7 @@ public class Hero {
             "|       - Aucune                                                |\n"+ 
             "|                                                               |\n"+ 
             "=================================================================\n");
-                System.out.println("Tu veux prendre un objet ? ( Saisir Arc ou Pierre de Soin ou Aucune)" +"\n");
+                System.out.println("Tu veux prendre un objet ? ( Saisir Arc ou Pierre de Soin ou Aucune)" +"\n"); // récupérer des objets
                 String objet = in.nextLine();
                 if(objet.equals("Arc") && nbarc == 1){
                     setinventaire(5);
@@ -303,11 +303,11 @@ public class Hero {
                 else if(objet.equals("Pierre de Soin") && nbpierre1 == 0){
                     System.out.println("Tu as déja récuperé ta Pierre de Soin");
                 }
-                else if(objet.equals("Aucune")){
+                else if(objet.equals("Aucune")){ //rien prendre
                     break;
                 }
             }
-            else if(Coffreopen.equals("Non")){
+            else if(Coffreopen.equals("Non")){ //rien prendre
                 break;
             }
         }

@@ -1,8 +1,8 @@
-public class Map { //class perso pour les déplacement
+public class Map { 
 
 private int latitude;
 private int longitude;
-private int[][] mur;  //matrice (définie) si > 20 mur et < 1 mur pour x et y
+private int[][] mur;  // différent matrice
 private int[][] hero; 
 private int[][] monstre; 
 private int[][] coffre; 
@@ -36,14 +36,14 @@ private int[][] arene;
         this.longitude = longitude;
     }
     
-    public void showmap(){ //il faut parcourir la carte(pas besoin de l'afficher) (savoir ou est le personnage sur la map)
+    public void showmap(){ //carte afficher
         for (int i = 0; i < latitude; i++) {
             for (int j = 0; j < longitude; j++) { //faire en sorte de mettre voir les cordonée et faire  (detecter les cordonées) si la longitude et latitude sont au possition du mur
                 
                 if(this.estMur(i, j)) {
                     System.out.print("X\t");//mur
                 }
-                else if(this.estHero(i, j)){ // ancien emplacement du hero ( a modif)
+                else if(this.estHero(i, j)){ 
                     System.out.print("H\t");//hero
                 }
                 else if(this.estmonstre(i, j)){

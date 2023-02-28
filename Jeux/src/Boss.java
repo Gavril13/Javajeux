@@ -1,9 +1,9 @@
-public class Boss {
+public class Boss { // Tout les Caractéristique du Boss
     private int attaque;
-    private int def;
-    private int pv;
-    private int velo;
-    private int ex;
+    private int def; // Défence
+    private int pv; // Point de Vie
+    private int velo; // Vélocité
+    private int ex; // Expérience
     private int latitude;
     private int longitude;
     

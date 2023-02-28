@@ -1,4 +1,4 @@
-public class Monstre {
+public class Monstre { // Caractéristique du Monstre
     private int attaque;
     private int def;
     private int pv;

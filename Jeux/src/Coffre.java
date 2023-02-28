@@ -1,4 +1,4 @@
-public class Coffre {
+public class Coffre { //Tout les Caractéristique Du Coffre
     private int arme;
     private int artefacts;
     private int potion;
