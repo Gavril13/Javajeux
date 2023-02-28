@@ -1,16 +1,15 @@
+import java.util.Scanner;
+
 public class Coffre {
     private int arme;
-    private int potion;
     private int artefacts;
     private int inventaire;
     private int longitude;
     private int latitude;
-    private boolean coffres;
 
 
-    public Coffre(int arme, int potion, int artefacts, int inventaire, int longitude, int latitude){
+    public Coffre(int arme, int artefacts, int inventaire, int longitude, int latitude){
         this.arme = arme;
-        this.potion = potion;
         this.artefacts = artefacts;
         this.inventaire = inventaire;
         this.latitude = latitude;
@@ -23,14 +22,6 @@ public class Coffre {
 
     public void setarme(int arme){
         this.arme = arme;
-    }
-
-    public int getpotion(){
-        return arme;
-    }
-
-    public void setpotion(int potion){
-        this.potion = potion;
     }
 
     public int getartefacts(){
@@ -65,14 +56,13 @@ public class Coffre {
         this.latitude = latitude;
     }
 
-
-    public boolean is_open() {
-		return coffres;
-	}
-	public void open() {
-		this.coffres = true;
-	}
-	public void close() {
-		this.coffres = false;
-	}
+    public void Coffres (Scanner in, Hero hero1, Coffre coffre1, Coffre coffre2, Coffre coffre3){
+        while(hero1.getLatitude() == coffre1.getlatitude() && hero1.getLongitude() == coffre1.getlongitude()){
+            System.out.println("\n=================================================================\n"+ 
+            "|                      Inventaire du Coffre                     |\n"+ 
+            "| Armes :                                                       |\n"+ 
+            "| 2 : Non                                                       |\n"+ 
+            "=================================================================\n");
+        }
+    }
 }
