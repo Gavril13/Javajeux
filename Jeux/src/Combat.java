@@ -1,12 +1,10 @@
 import java.util.Scanner;
 
 public class Combat {
-    boolean combattre = false;
-    boolean partir = false;
-
+    
     public void combat (Hero hero1, Monstre monstre1, Monstre monstre2, Monstre monstre3, Monstre monstre4 , Boss boss1){
 
-        if(hero1.getLatitude() == monstre1.getlatitude() && hero1.getLongitude() == monstre1.getlongitude()){
+        while(hero1.getLatitude() == monstre1.getlatitude() && hero1.getLongitude() == monstre1.getlongitude()){
             System.out.println("\n-----------------------\n" +"TU ES EN COMBAT\n");
             System.out.println("Tes Capacité :\n" + "   -Point de vie ->" + hero1.getpv()
             +"\n" + "   -Puissance D'attaque -> " + hero1.getattaque() 
@@ -19,30 +17,70 @@ public class Combat {
             + "\n" + "   -Esquive -> " + monstre1.getvelo()
             +"\n-----------------------\n");
 
-            System.out.print("Tu Veux Attaquer ou Fuir ? (saisir Attaquer ou Fuir)\n");
+            System.out.print("Tu Veux Attaquer ou Fuir ? (Saisir Attaquer ou Fuir)\n");
 
             Scanner attaque = new Scanner(System.in);
             String attaqueoupas = attaque.nextLine();
             if (attaqueoupas.equals("Attaquer")){
-                combattre = true;
-                System.out.println("Le Combat va commencer !"); //Il manque le combat
-                if(attaqueoupas.equals("Combattre")){
+                System.out.println("Le Combat va commencer ! (Saisir Combattre ou Soigner)"); //Il manque le combat
+                String attaqueoupas1 = attaque.nextLine();
+                if(attaqueoupas1.equals("Combattre") && hero1.getvelo() > monstre1.getvelo()){
                     monstre1.setpv(monstre1.getpv() - hero1.getattaque());
-                    System.out.println("Le Monstre à perdu " + hero1.getattaque() + " point de vie");
+                    System.out.println("Le Monstre à perdu " + hero1.getattaque() + " point de vie\n" + "Il lui reste " + monstre1.getpv());
+                    if(monstre1.getpv() <= 0){
+                        System.out.println("Tu viens de gagner le combat");
+                        hero1.setattaque(hero1.getattaque() + 10);
+                        break;
+                    }
+                    else{
+                        hero1.setpv(hero1.getpv() - monstre1.getattaque());
+                        System.out.println("Le Monstre viens de te mettre \n" + monstre1.getattaque() + " point de dégat\n" + "Il te reste " + hero1.getpv() + " Point de vie");
+                    }
                 }
-                if(attaqueoupas.equals("Soigner")){
+                else if(attaqueoupas1.equals("Combattre")  && hero1.getvelo() < monstre1.getvelo()){
+                    hero1.setpv(hero1.getpv() - monstre1.getattaque());
+                    System.out.println("Le Monstre viens de te mettre \n" + monstre1.getattaque() + " point de dégat\n" + "Il te reste " + hero1.getpv() + " Point de vie");
+                    if(monstre1.getpv() <= 0){
+                        System.out.println("Tu viens de gagner le combat");
+                        hero1.setattaque(hero1.getattaque() + 10);
+                        break;
+                    }
+                    else{
+                        monstre1.setpv(monstre1.getpv() - hero1.getattaque());
+                        System.out.println("Le Monstre à perdu " + hero1.getattaque() + " point de vie\n" + "Il lui reste " + monstre1.getpv());
+                    }
+                }
+                else if(attaqueoupas1.equals("Soigner") && hero1.getvelo() > monstre1.getvelo()){
                     hero1.setpv(hero1.getpv() + 20);
-                    System.out.println("Tu viens de te soigner 20 point de vie, il te reste " + hero1.getpv() + " point de vie");
+                    System.out.println("Tu viens de te soigner 20 point de vie\n" + " Il te reste " + hero1.getpv() + " point de vie");
+                    if(monstre1.getpv() <= 0){
+                        System.out.println("Tu viens de gagner le combat");
+                        break;
+                    }
+                    else{
+                        hero1.setpv(hero1.getpv() - monstre1.getattaque());
+                        System.out.println("Le Monstre viens de te mettre \n" + monstre1.getattaque() + " point de dégat\n" + "Il te reste " + hero1.getpv() + " Point de vie");
+                    }
+                }
+                else if(attaqueoupas1.equals("Soigner") && hero1.getvelo() < monstre1.getvelo()){
+                    hero1.setpv(hero1.getpv() - monstre1.getattaque());
+                    System.out.println("Le Monstre viens de te mettre \n" + monstre1.getattaque() + " point de dégat\n" + "Il te reste " + hero1.getpv() + " Point de vie");
+                    if(monstre1.getpv() <= 0){
+                        System.out.println("Tu viens de gagner le combat");
+                        break;
+                    }
+                    else{
+                        hero1.setpv(hero1.getpv() + 20);
+                        System.out.println("Tu viens de te soigner 20 point de vie\n" + " Il te reste " + hero1.getpv() + " point de vie");
+                    }
                 }
             } 
-            if (attaqueoupas.equals("Fuir")){
-                partir = true;
+            else if (attaqueoupas.equals("Fuir")){
                 System.out.println("Tu viens de Fuir le Combat !"); 
-                return;
+                break;
             }
-
         }
-        else if(hero1.getLatitude() == monstre2.getlatitude() && hero1.getLongitude() == monstre2.getlongitude()){
+        while(hero1.getLatitude() == monstre2.getlatitude() && hero1.getLongitude() == monstre2.getlongitude()){
             System.out.println("\n-----------------------\n" +"TU ES EN COMBAT\n");
             System.out.println("Tes Capacité :\n" + "   -Point de vie ->" + hero1.getpv()
             +"\n" + "   -Puissance D'attaque -> " + hero1.getattaque() 
@@ -55,22 +93,70 @@ public class Combat {
             + "\n" + "   -Esquive -> " + monstre2.getvelo()
             +"\n-----------------------\n");
 
-            System.out.print("Tu Veux Attaquer ou Fuir ? (saisir Attaquer ou Fuir)\n");
+            System.out.print("Tu Veux Attaquer ou Fuir ? (Saisir Attaquer ou Fuir)\n");
 
             Scanner attaque = new Scanner(System.in);
             String attaqueoupas = attaque.nextLine();
             if (attaqueoupas.equals("Attaquer")){
-                combattre = true;
-                System.out.println("Le Combat va commencer !"); //Il manque le combat
+                System.out.println("Le Combat va commencer ! (Saisir Combattre ou Soigner)"); //Il manque le combat
+                String attaqueoupas1 = attaque.nextLine();
+                if(attaqueoupas1.equals("Combattre") && hero1.getvelo() > monstre2.getvelo()){
+                    monstre2.setpv(monstre2.getpv() - hero1.getattaque());
+                    System.out.println("Le Monstre à perdu " + hero1.getattaque() + " point de vie\n" + "Il lui reste " + monstre2.getpv());
+                    if(monstre2.getpv() <= 0){
+                        System.out.println("Tu viens de gagner le combat");
+                        hero1.setattaque(hero1.getattaque() + 10);
+                        break;
+                    }
+                    else{
+                        hero1.setpv(hero1.getpv() - monstre2.getattaque());
+                        System.out.println("Le Monstre viens de te mettre \n" + monstre2.getattaque() + " point de dégat\n" + "Il te reste " + hero1.getpv() + " Point de vie");
+                    }
+                }
+                else if(attaqueoupas1.equals("Combattre")  && hero1.getvelo() < monstre2.getvelo()){
+                    hero1.setpv(hero1.getpv() - monstre2.getattaque());
+                    System.out.println("Le Monstre viens de te mettre \n" + monstre2.getattaque() + " point de dégat\n" + "Il te reste " + hero1.getpv() + " Point de vie");
+                    if(monstre2.getpv() <= 0){
+                        System.out.println("Tu viens de gagner le combat");
+                        hero1.setattaque(hero1.getattaque() + 10);
+                        break;
+                    }
+                    else{
+                        monstre2.setpv(monstre2.getpv() - hero1.getattaque());
+                        System.out.println("Le Monstre à perdu " + hero1.getattaque() + " point de vie\n" + "Il lui reste " + monstre2.getpv());
+                    }
+                }
+                else if(attaqueoupas1.equals("Soigner") && hero1.getvelo() > monstre2.getvelo()){
+                    hero1.setpv(hero1.getpv() + 20);
+                    System.out.println("Tu viens de te soigner 20 point de vie\n" + " Il te reste " + hero1.getpv() + " point de vie");
+                    if(monstre2.getpv() <= 0){
+                        System.out.println("Tu viens de gagner le combat");
+                        break;
+                    }
+                    else{
+                        hero1.setpv(hero1.getpv() - monstre2.getattaque());
+                        System.out.println("Le Monstre viens de te mettre \n" + monstre2.getattaque() + " point de dégat\n" + "Il te reste " + hero1.getpv() + " Point de vie");
+                    }
+                }
+                else if(attaqueoupas1.equals("Soigner") && hero1.getvelo() < monstre1.getvelo()){
+                    hero1.setpv(hero1.getpv() - monstre2.getattaque());
+                    System.out.println("Le Monstre viens de te mettre \n" + monstre2.getattaque() + " point de dégat\n" + "Il te reste " + hero1.getpv() + " Point de vie");
+                    if(monstre2.getpv() <= 0){
+                        System.out.println("Tu viens de gagner le combat");
+                        break;
+                    }
+                    else{
+                        hero1.setpv(hero1.getpv() + 20);
+                        System.out.println("Tu viens de te soigner 20 point de vie\n" + " Il te reste " + hero1.getpv() + " point de vie");
+                    }
+                }
             } 
-            if (attaqueoupas.equals("Fuir")){
-                partir = true;
+            else if (attaqueoupas.equals("Fuir")){
                 System.out.println("Tu viens de Fuir le Combat !"); 
-                return;
+                break;
             }
-
         }
-        else if(hero1.getLatitude() == monstre3.getlatitude() && hero1.getLongitude() == monstre3.getlongitude()){
+        while(hero1.getLatitude() == monstre3.getlatitude() && hero1.getLongitude() == monstre3.getlongitude()){
             System.out.println("\n-----------------------\n" +"TU ES EN COMBAT\n");
             System.out.println("Tes Capacité :\n" + "   -Point de vie ->" + hero1.getpv()
             +"\n" + "   -Puissance D'attaque -> " + hero1.getattaque() 
@@ -83,22 +169,70 @@ public class Combat {
             + "\n" + "   -Esquive -> " + monstre3.getvelo()
             +"\n-----------------------\n");
 
-            System.out.print("Tu Veux Attaquer ou Fuir ? (saisir Attaquer ou Fuir)\n");
+            System.out.print("Tu Veux Attaquer ou Fuir ? (Saisir Attaquer ou Fuir)\n");
 
             Scanner attaque = new Scanner(System.in);
             String attaqueoupas = attaque.nextLine();
             if (attaqueoupas.equals("Attaquer")){
-                combattre = true;
-                System.out.println("Le Combat va commencer !"); //Il manque le combat
+                System.out.println("Le Combat va commencer ! (Saisir Combattre ou Soigner)"); //Il manque le combat
+                String attaqueoupas1 = attaque.nextLine();
+                if(attaqueoupas1.equals("Combattre") && hero1.getvelo() > monstre3.getvelo()){
+                    monstre3.setpv(monstre3.getpv() - hero1.getattaque());
+                    System.out.println("Le Monstre à perdu " + hero1.getattaque() + " point de vie\n" + "Il lui reste " + monstre3.getpv());
+                    if(monstre3.getpv() <= 0){
+                        System.out.println("Tu viens de gagner le combat");
+                        hero1.setattaque(hero1.getattaque() + 10);
+                        break;
+                    }
+                    else{
+                        hero1.setpv(hero1.getpv() - monstre3.getattaque());
+                        System.out.println("Le Monstre viens de te mettre \n" + monstre3.getattaque() + " point de dégat\n" + "Il te reste " + hero1.getpv() + " Point de vie");
+                    }
+                }
+                else if(attaqueoupas1.equals("Combattre")  && hero1.getvelo() < monstre1.getvelo()){
+                    hero1.setpv(hero1.getpv() - monstre3.getattaque());
+                    System.out.println("Le Monstre viens de te mettre \n" + monstre3.getattaque() + " point de dégat\n" + "Il te reste " + hero1.getpv() + " Point de vie");
+                    if(monstre3.getpv() <= 0){
+                        System.out.println("Tu viens de gagner le combat");
+                        hero1.setattaque(hero1.getattaque() + 10);
+                        break;
+                    }
+                    else{
+                        monstre3.setpv(monstre3.getpv() - hero1.getattaque());
+                        System.out.println("Le Monstre à perdu " + hero1.getattaque() + " point de vie\n" + "Il lui reste " + monstre3.getpv());
+                    }
+                }
+                else if(attaqueoupas1.equals("Soigner") && hero1.getvelo() > monstre3.getvelo()){
+                    hero1.setpv(hero1.getpv() + 20);
+                    System.out.println("Tu viens de te soigner 20 point de vie\n" + " Il te reste " + hero1.getpv() + " point de vie");
+                    if(monstre3.getpv() <= 0){
+                        System.out.println("Tu viens de gagner le combat");
+                        break;
+                    }
+                    else{
+                        hero1.setpv(hero1.getpv() - monstre3.getattaque());
+                        System.out.println("Le Monstre viens de te mettre \n" + monstre3.getattaque() + " point de dégat\n" + "Il te reste " + hero1.getpv() + " Point de vie");
+                    }
+                }
+                else if(attaqueoupas1.equals("Soigner") && hero1.getvelo() < monstre3.getvelo()){
+                    hero1.setpv(hero1.getpv() - monstre3.getattaque());
+                    System.out.println("Le Monstre viens de te mettre \n" + monstre3.getattaque() + " point de dégat\n" + "Il te reste " + hero1.getpv() + " Point de vie");
+                    if(monstre3.getpv() <= 0){
+                        System.out.println("Tu viens de gagner le combat");
+                        break;
+                    }
+                    else{
+                        hero1.setpv(hero1.getpv() + 20);
+                        System.out.println("Tu viens de te soigner 20 point de vie\n" + " Il te reste " + hero1.getpv() + " point de vie");
+                    }
+                }
             } 
-            if (attaqueoupas.equals("Fuir")){
-                partir = true;
+            else if (attaqueoupas.equals("Fuir")){
                 System.out.println("Tu viens de Fuir le Combat !"); 
-                return;
+                break;
             }
-
         }
-        else if(hero1.getLatitude() == monstre4.getlatitude() && hero1.getLongitude() == monstre4.getlongitude()){
+        while(hero1.getLatitude() == monstre4.getlatitude() && hero1.getLongitude() == monstre4.getlongitude()){
             System.out.println("\n-----------------------\n" +"TU ES EN COMBAT\n");
             System.out.println("Tes Capacité :\n" + "   -Point de vie ->" + hero1.getpv()
             +"\n" + "   -Puissance D'attaque -> " + hero1.getattaque() 
@@ -111,48 +245,144 @@ public class Combat {
             + "\n" + "   -Esquive -> " + monstre4.getvelo()
             +"\n-----------------------\n");
 
-            System.out.print("Tu Veux Attaquer ou Fuir ? (saisir Attaquer ou Fuir)\n");
+            System.out.print("Tu Veux Attaquer ou Fuir ? (Saisir Attaquer ou Fuir)\n");
 
             Scanner attaque = new Scanner(System.in);
             String attaqueoupas = attaque.nextLine();
             if (attaqueoupas.equals("Attaquer")){
-                combattre = true;
-                System.out.println("Le Combat va commencer !"); //Il manque le combat
+                System.out.println("Le Combat va commencer ! (Saisir Combattre ou Soigner)"); //Il manque le combat
+                String attaqueoupas1 = attaque.nextLine();
+                if(attaqueoupas1.equals("Combattre") && hero1.getvelo() > monstre4.getvelo()){
+                    monstre4.setpv(monstre4.getpv() - hero1.getattaque());
+                    System.out.println("Le Monstre à perdu " + hero1.getattaque() + " point de vie\n" + "Il lui reste " + monstre4.getpv());
+                    if(monstre4.getpv() <= 0){
+                        System.out.println("Tu viens de gagner le combat");
+                        hero1.setattaque(hero1.getattaque() + 10);
+                        break;
+                    }
+                    else{
+                        hero1.setpv(hero1.getpv() - monstre4.getattaque());
+                        System.out.println("Le Monstre viens de te mettre \n" + monstre4.getattaque() + " point de dégat\n" + "Il te reste " + hero1.getpv() + " Point de vie");
+                    }
+                }
+                else if(attaqueoupas1.equals("Combattre")  && hero1.getvelo() < monstre4.getvelo()){
+                    hero1.setpv(hero1.getpv() - monstre4.getattaque());
+                    System.out.println("Le Monstre viens de te mettre \n" + monstre4.getattaque() + " point de dégat\n" + "Il te reste " + hero1.getpv() + " Point de vie");
+                    if(monstre4.getpv() <= 0){
+                        System.out.println("Tu viens de gagner le combat");
+                        hero1.setattaque(hero1.getattaque() + 10);
+                        break;
+                    }
+                    else{
+                        monstre4.setpv(monstre4.getpv() - hero1.getattaque());
+                        System.out.println("Le Monstre à perdu " + hero1.getattaque() + " point de vie\n" + "Il lui reste " + monstre4.getpv());
+                    }
+                }
+                else if(attaqueoupas1.equals("Soigner") && hero1.getvelo() > monstre4.getvelo()){
+                    hero1.setpv(hero1.getpv() + 20);
+                    System.out.println("Tu viens de te soigner 20 point de vie\n" + " Il te reste " + hero1.getpv() + " point de vie");
+                    if(monstre4.getpv() <= 0){
+                        System.out.println("Tu viens de gagner le combat");
+                        break;
+                    }
+                    else{
+                        hero1.setpv(hero1.getpv() - monstre4.getattaque());
+                        System.out.println("Le Monstre viens de te mettre \n" + monstre4.getattaque() + " point de dégat\n" + "Il te reste " + hero1.getpv() + " Point de vie");
+                    }
+                }
+                else if(attaqueoupas1.equals("Soigner") && hero1.getvelo() < monstre4.getvelo()){
+                    hero1.setpv(hero1.getpv() - monstre4.getattaque());
+                    System.out.println("Le Monstre viens de te mettre \n" + monstre4.getattaque() + " point de dégat\n" + "Il te reste " + hero1.getpv() + " Point de vie");
+                    if(monstre4.getpv() <= 0){
+                        System.out.println("Tu viens de gagner le combat");
+                        break;
+                    }
+                    else{
+                        hero1.setpv(hero1.getpv() + 20);
+                        System.out.println("Tu viens de te soigner 20 point de vie\n" + " Il te reste " + hero1.getpv() + " point de vie");
+                    }
+                }
             } 
-            if (attaqueoupas.equals("Fuir")){
-                partir = true;
+            else if (attaqueoupas.equals("Fuir")){
                 System.out.println("Tu viens de Fuir le Combat !"); 
-                return;
+                break;
             }
-
         }
-        if(hero1.getLatitude() == boss1.getlatitude() && hero1.getLongitude() == boss1.getlongitude()){
+        while(hero1.getLatitude() == boss1.getlatitude() && hero1.getLongitude() == boss1.getlongitude()){
             System.out.println("\n-----------------------\n" +"TU ES EN COMBAT\n");
             System.out.println("Tes Capacité :\n" + "   -Point de vie ->" + hero1.getpv()
             +"\n" + "   -Puissance D'attaque -> " + hero1.getattaque() 
             + "\n" + "   -Ta Défence -> " + hero1.getdef()
             + "\n" + "   -Ton Esquive -> " + hero1.getvelo()
             + "\n" + "\n"
-            + "Capacité du Boss Final :\n" + "   -Point de vie ->" + boss1.getpv()
+            + "Capacité du Monstre :\n" + "   -Point de vie ->" + boss1.getpv()
             +"\n" + "   -Puissance D'attaque -> " + boss1.getattaque() 
             + "\n" + "   -Défence -> " + boss1.getdef()
             + "\n" + "   -Esquive -> " + boss1.getvelo()
             +"\n-----------------------\n");
 
-            System.out.print("Tu Veux Attaquer ou Fuir ? (saisir Attaquer ou Fuir)\n");
+            System.out.print("Tu Veux Attaquer ou Fuir ? (Saisir Attaquer ou Fuir)\n");
 
             Scanner attaque = new Scanner(System.in);
             String attaqueoupas = attaque.nextLine();
             if (attaqueoupas.equals("Attaquer")){
-                combattre = true;
-                System.out.println("Le Combat va commencer !"); //Il manque le combat
+                System.out.println("Le Combat va commencer ! (Saisir Combattre ou Soigner)"); //Il manque le combat
+                String attaqueoupas1 = attaque.nextLine();
+                if(attaqueoupas1.equals("Combattre") && hero1.getvelo() > boss1.getvelo()){
+                    boss1.setpv(boss1.getpv() - hero1.getattaque());
+                    System.out.println("Le Monstre à perdu " + hero1.getattaque() + " point de vie\n" + "Il lui reste " + boss1.getpv());
+                    if(boss1.getpv() <= 0){
+                        System.out.println("Tu viens de gagner le combat");
+                        hero1.setattaque(hero1.getattaque() + 10);
+                        break;
+                    }
+                    else{
+                        hero1.setpv(hero1.getpv() - boss1.getattaque());
+                        System.out.println("Le Monstre viens de te mettre \n" + boss1.getattaque() + " point de dégat\n" + "Il te reste " + hero1.getpv() + " Point de vie");
+                    }
+                }
+                else if(attaqueoupas1.equals("Combattre")  && hero1.getvelo() < boss1.getvelo()){
+                    hero1.setpv(hero1.getpv() - boss1.getattaque());
+                    System.out.println("Le Monstre viens de te mettre \n" + boss1.getattaque() + " point de dégat\n" + "Il te reste " + hero1.getpv() + " Point de vie");
+                    if(boss1.getpv() <= 0){
+                        System.out.println("Tu viens de gagner le combat");
+                        hero1.setattaque(hero1.getattaque() + 10);
+                        break;
+                    }
+                    else{
+                        boss1.setpv(boss1.getpv() - hero1.getattaque());
+                        System.out.println("Le Monstre à perdu " + hero1.getattaque() + " point de vie\n" + "Il lui reste " + boss1.getpv());
+                    }
+                }
+                else if(attaqueoupas1.equals("Soigner") && hero1.getvelo() > boss1.getvelo()){
+                    hero1.setpv(hero1.getpv() + 20);
+                    System.out.println("Tu viens de te soigner 20 point de vie\n" + " Il te reste " + hero1.getpv() + " point de vie");
+                    if(boss1.getpv() <= 0){
+                        System.out.println("Tu viens de gagner le combat");
+                        break;
+                    }
+                    else{
+                        hero1.setpv(hero1.getpv() - boss1.getattaque());
+                        System.out.println("Le Monstre viens de te mettre \n" + boss1.getattaque() + " point de dégat\n" + "Il te reste " + hero1.getpv() + " Point de vie");
+                    }
+                }
+                else if(attaqueoupas1.equals("Soigner") && hero1.getvelo() < boss1.getvelo()){
+                    hero1.setpv(hero1.getpv() - boss1.getattaque());
+                    System.out.println("Le Monstre viens de te mettre \n" + boss1.getattaque() + " point de dégat\n" + "Il te reste " + hero1.getpv() + " Point de vie");
+                    if(boss1.getpv() <= 0){
+                        System.out.println("Tu viens de gagner le combat");
+                        break;
+                    }
+                    else{
+                        hero1.setpv(hero1.getpv() + 20);
+                        System.out.println("Tu viens de te soigner 20 point de vie\n" + " Il te reste " + hero1.getpv() + " point de vie");
+                    }
+                }
             } 
-            if (attaqueoupas.equals("Fuir")){
-                partir = true;
+            else if (attaqueoupas.equals("Fuir")){
                 System.out.println("Tu viens de Fuir le Combat !"); 
-                return;
+                break;
             }
-
         }
 
     }

@@ -29,7 +29,7 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
         //Interaction interaction = new Interaction();
         //interaction.start(null, null);
 
-        Hero hero1 = new Hero(1, 1, 15,15, 100, 5, 20);
+        Hero hero1 = new Hero(1, 1, 15,15, 100, 8, 20);
 
         Monstre monstre1 = new Monstre(10, 10, 100, 5, 20, 5, 1);
 
