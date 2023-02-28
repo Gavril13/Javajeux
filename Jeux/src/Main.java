@@ -26,7 +26,7 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
             {9,0},{9,1},{9,2},{9,3},{9,4},{9,5},{9,6},{9,7},{9,8},{9,9}
         };
 
-        Interaction interaction = new Interaction(null, 0);
+        Interaction interaction = new Interaction(null);
 
         interaction.start(null, null, null);
 

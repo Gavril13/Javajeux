@@ -2,11 +2,9 @@ import java.util.Scanner;
 
 public class Interaction {
     private String name;
-    private int info;
 
-    public Interaction (String name, int info){
+    public Interaction (String name){
         this.name = name;
-        this.info = info;
 
     }
 
@@ -14,17 +12,10 @@ public class Interaction {
         return name;
     }
 
-    public int info(){
-        return info;
-    }
-
     public void name(String name){
         this.name = name;
     }
 
-    public void info(int info){
-        this.info = info;
-    }
 
     public void start(Scanner in, String startgame , Hero hero1){ 
                 System.out.println("\n=================================================================\n"+ 
@@ -51,9 +42,6 @@ public class Interaction {
                         "Oublie pas de jouer ?\n"+
                         "-----------------------------------------------------------------\n");               
                     break;
-
-                    default:   
-                        System.out.println("\nMauvaise entrée.\nRéessaies, tu peux y arriver ;)");
                 }
             } 
 }
