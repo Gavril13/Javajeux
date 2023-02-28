@@ -26,9 +26,7 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
             {9,0},{9,1},{9,2},{9,3},{9,4},{9,5},{9,6},{9,7},{9,8},{9,9}
         };
 
-        Interaction interaction = new Interaction(null);
-
-        interaction.start(null, null, null);
+        //interaction.start(null, null, null);
 
         Hero hero1 = new Hero(1, 1, 15,15, 100, 5, 20);
 
@@ -39,6 +37,8 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
         Monstre monstre3 = new Monstre(10, 10, 100, 5, 20, 5, 6);
 
         Monstre monstre4 = new Monstre(10, 10, 100, 5, 20, 8, 5);
+
+        
 
 
         int[][] coffre = {{3,1},{1,8},{7,8}};//emplacement coffre
@@ -63,6 +63,8 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
             System.out.println("vous avez choisie : " + choixdeplacement); 
 
             hero1.deplacer(choixdeplacement);
+
+            //Combat combat
 
         }
     }

@@ -3,20 +3,6 @@ import java.util.Scanner;
 public class Interaction {
     private String name;
 
-    public Interaction (String name){
-        this.name = name;
-
-    }
-
-    public String name(){
-        return name;
-    }
-
-    public void name(String name){
-        this.name = name;
-    }
-
-
     public void start(Scanner in, String startgame , Hero hero1){ 
                 System.out.println("\n=================================================================\n"+ 
                 "| Es-tu prête à ce jeux ?                                       |\n"+ 
