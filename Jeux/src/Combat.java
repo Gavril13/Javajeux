@@ -2,8 +2,7 @@ import java.util.Scanner;
 
 public class Combat {
     
-    public void combat (Hero hero1, Monstre monstre1, Monstre monstre2, Monstre monstre3, Monstre monstre4 , Boss boss1){
-
+    public void combat (Hero hero1, Monstre monstre1, Monstre monstre2, Monstre monstre3, Monstre monstre4 , Boss boss1, Scanner in){
         while(hero1.getLatitude() == monstre1.getlatitude() && hero1.getLongitude() == monstre1.getlongitude()){
             System.out.println("\n-----------------------\n" +"TU ES EN COMBAT\n");
             System.out.println("Tes Capacité :\n" + "   -Point de vie ->" + hero1.getpv()
@@ -19,11 +18,10 @@ public class Combat {
 
             System.out.print("Tu Veux Attaquer ou Fuir ? (Saisir Attaquer ou Fuir)\n");
 
-            Scanner attaque = new Scanner(System.in);
-            String attaqueoupas = attaque.nextLine();
+            String attaqueoupas = in.nextLine();
             if (attaqueoupas.equals("Attaquer")){
                 System.out.println("Le Combat va commencer ! (Saisir Combattre ou Soigner)"); //Il manque le combat
-                String attaqueoupas1 = attaque.nextLine();
+                String attaqueoupas1 = in.nextLine();
                 if(attaqueoupas1.equals("Combattre") && hero1.getvelo() > monstre1.getvelo()){
                     monstre1.setpv(monstre1.getpv() - hero1.getattaque());
                     System.out.println("Le Monstre à perdu " + hero1.getattaque() + " point de vie\n" + "Il lui reste " + monstre1.getpv());
@@ -94,12 +92,10 @@ public class Combat {
             +"\n-----------------------\n");
 
             System.out.print("Tu Veux Attaquer ou Fuir ? (Saisir Attaquer ou Fuir)\n");
-
-            Scanner attaque = new Scanner(System.in);
-            String attaqueoupas = attaque.nextLine();
+            String attaqueoupas = in.nextLine();
             if (attaqueoupas.equals("Attaquer")){
                 System.out.println("Le Combat va commencer ! (Saisir Combattre ou Soigner)"); //Il manque le combat
-                String attaqueoupas1 = attaque.nextLine();
+                String attaqueoupas1 = in.nextLine();
                 if(attaqueoupas1.equals("Combattre") && hero1.getvelo() > monstre2.getvelo()){
                     monstre2.setpv(monstre2.getpv() - hero1.getattaque());
                     System.out.println("Le Monstre à perdu " + hero1.getattaque() + " point de vie\n" + "Il lui reste " + monstre2.getpv());
@@ -170,12 +166,10 @@ public class Combat {
             +"\n-----------------------\n");
 
             System.out.print("Tu Veux Attaquer ou Fuir ? (Saisir Attaquer ou Fuir)\n");
-
-            Scanner attaque = new Scanner(System.in);
-            String attaqueoupas = attaque.nextLine();
+            String attaqueoupas = in.nextLine();
             if (attaqueoupas.equals("Attaquer")){
                 System.out.println("Le Combat va commencer ! (Saisir Combattre ou Soigner)"); //Il manque le combat
-                String attaqueoupas1 = attaque.nextLine();
+                String attaqueoupas1 = in.nextLine();
                 if(attaqueoupas1.equals("Combattre") && hero1.getvelo() > monstre3.getvelo()){
                     monstre3.setpv(monstre3.getpv() - hero1.getattaque());
                     System.out.println("Le Monstre à perdu " + hero1.getattaque() + " point de vie\n" + "Il lui reste " + monstre3.getpv());
@@ -246,12 +240,10 @@ public class Combat {
             +"\n-----------------------\n");
 
             System.out.print("Tu Veux Attaquer ou Fuir ? (Saisir Attaquer ou Fuir)\n");
-
-            Scanner attaque = new Scanner(System.in);
-            String attaqueoupas = attaque.nextLine();
+            String attaqueoupas = in.nextLine();
             if (attaqueoupas.equals("Attaquer")){
                 System.out.println("Le Combat va commencer ! (Saisir Combattre ou Soigner)"); //Il manque le combat
-                String attaqueoupas1 = attaque.nextLine();
+                String attaqueoupas1 = in.nextLine();
                 if(attaqueoupas1.equals("Combattre") && hero1.getvelo() > monstre4.getvelo()){
                     monstre4.setpv(monstre4.getpv() - hero1.getattaque());
                     System.out.println("Le Monstre à perdu " + hero1.getattaque() + " point de vie\n" + "Il lui reste " + monstre4.getpv());
@@ -322,12 +314,10 @@ public class Combat {
             +"\n-----------------------\n");
 
             System.out.print("Tu Veux Attaquer ou Fuir ? (Saisir Attaquer ou Fuir)\n");
-
-            Scanner attaque = new Scanner(System.in);
-            String attaqueoupas = attaque.nextLine();
+            String attaqueoupas = in.nextLine();
             if (attaqueoupas.equals("Attaquer")){
                 System.out.println("Le Combat va commencer ! (Saisir Combattre ou Soigner)"); //Il manque le combat
-                String attaqueoupas1 = attaque.nextLine();
+                String attaqueoupas1 = in.nextLine();
                 if(attaqueoupas1.equals("Combattre") && hero1.getvelo() > boss1.getvelo()){
                     boss1.setpv(boss1.getpv() - hero1.getattaque());
                     System.out.println("Le Monstre à perdu " + hero1.getattaque() + " point de vie\n" + "Il lui reste " + boss1.getpv());
