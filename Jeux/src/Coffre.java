@@ -1,17 +1,15 @@
-import java.util.Scanner;
-
 public class Coffre {
     private int arme;
     private int artefacts;
-    private int inventaire;
+    private int potion;
     private int longitude;
     private int latitude;
 
 
-    public Coffre(int arme, int artefacts, int inventaire, int longitude, int latitude){
+    public Coffre(int arme, int artefacts,int potion, int longitude, int latitude){
         this.arme = arme;
         this.artefacts = artefacts;
-        this.inventaire = inventaire;
+        this.potion = potion;
         this.latitude = latitude;
         this.longitude = longitude;
     }
@@ -32,12 +30,12 @@ public class Coffre {
         this.artefacts = artefacts;
     }
 
-    public int getinventaire(){
-        return inventaire;
+    public int getpotion(){
+        return potion;
     }
 
-    public void setinventaire(int inventaire){
-        this.inventaire = inventaire;
+    public void setpotion(int potion){
+        this.potion = potion;
     }
 
     public int getlongitude(){
@@ -55,6 +53,5 @@ public class Coffre {
     public void setlatitude(int latitude){
         this.latitude = latitude;
     }
-
     
 }

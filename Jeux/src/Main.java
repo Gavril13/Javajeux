@@ -4,8 +4,7 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
     public static void main(String[] args) throws Exception {
         System.out.println("-------------" + " Gavril Jeux-Java " + "-------------");
         //afficher la map apres qui a saisie son nom ... (debut de game)
-        int[][] mur = 
-        {
+        int[][] mur = {
             {0,0},{0,1},{0,2},{0,3},{0,4},{0,5},{0,6},{0,7},{0,8},{0,9},//haut
             {1,0},{2,0},{3,0},{4,0},{5,0},{6,0},{7,0},{8,0},{9,0},// gauche
             {9,0},{9,1},{9,2},{9,3},{9,4},{9,5},{9,6},{9,7},{9,8},{9,9}, //bas
@@ -26,7 +25,7 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
             {9,0},{9,1},{9,2},{9,3},{9,4},{9,5},{9,6},{9,7},{9,8},{9,9}
         };
 
-        Hero hero1 = new Hero(1, 1, 15,15, 100, 8, 20);
+        Hero hero1 = new Hero(1, 1, 15,15, 100, 8, 20,0);
 
         Scanner in = new Scanner(System.in);
         Interaction interaction = new Interaction();
@@ -40,11 +39,11 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
 
         Monstre monstre4 = new Monstre(10, 10, 100, 5, 20, 8, 5);
 
-        Coffre coffre1 = new Coffre(1, 1, 5, 1, 3);
+        Coffre coffre1 = new Coffre(1, 1, 0, 1, 3); 
 
-        Coffre coffre2 = new Coffre(1, 0, 5, 8, 1);
+        Coffre coffre2 = new Coffre(1, 0, 1, 8, 1);
 
-        Coffre coffre3 = new Coffre(0, 1, 5, 8, 7);
+        Coffre coffre3 = new Coffre(0, 1, 1, 8, 7);
 
         Boss boss1 = new Boss(40, 50, 400, 20, 200, 2, 8);
             
@@ -52,7 +51,7 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
 
             int[][] monstre = {{monstre1.getlatitude(), monstre1.getlongitude()}, {monstre2.getlatitude(), monstre2.getlongitude()}, {monstre3.getlatitude(), monstre3.getlongitude()}, {monstre4.getlatitude(), monstre4.getlongitude()}};
 
-            int [][] coffre = {{coffre1.getlatitude(), coffre1.getlongitude()}, {coffre2.getlatitude(), coffre2.getlongitude()}, {coffre3.getlatitude(), coffre3.getlongitude()}};
+            int[][] coffre = {{coffre1.getlatitude(), coffre1.getlongitude()}, {coffre2.getlatitude(), coffre2.getlongitude()}, {coffre3.getlatitude(), coffre3.getlongitude()}};
 
             int[][] hero = {{hero1.getLatitude(), hero1.getLongitude()}};
 
@@ -62,7 +61,7 @@ public class Main { //essayer de faire juste déplacer le point H de 1 de cordon
 
             map.showmap();
 
-            System.out.println("Vous voulez aller ou?\n(haut, bas, gauche, droite)");
+            System.out.println("Vous voulez aller ou?\n(haut, bas, gauche, droite) ou regarder (inventaire)");
             String choixdeplacement = in.nextLine();
             System.out.println("vous avez choisie : " + choixdeplacement); 
 
